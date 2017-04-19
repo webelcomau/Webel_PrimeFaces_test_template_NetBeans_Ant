@@ -1,0 +1,232 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"            
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:util="http://xmlns.jcp.org/jsf/composite/util">
+
+    <!--
+     Author: Darren Kelly (Webel IT Australia). PLEASE DO NOT EDIT THIS PAGE DIRECTLY !
+     
+     You are welcome to copy this page as a starting point for a new test page.
+     If you copy this page, please however change the authorship declaration.
+    -->
+
+    <ui:param name="title" value="PrimeFaces: Webel test app: basic p:dataTable with row editing and add-row button"/>
+
+    <h:head>
+        <title>#{title}</title>
+    </h:head>
+
+    <h:body>
+
+        <!--
+        <ui:debug hotkey="d" rendered="true"/>
+        -->
+
+        <ui:include src="common.xhtml"/>
+
+        <f:view>
+            <f:metadata>
+                <!-- This is needed for the 'Add new entity row' feature -->
+                <f:event type="preRenderView" listener="#{viewBean.reset}"/>        
+            </f:metadata>
+        </f:view>
+
+        <util:help style="width:30em;">
+            TIP: it is recommended that you make a copy of this page with a new<br/>
+            name and new page title if you are preparing a new <code>p:dataTable</code> test.<br/>
+            <span class="nb">Then use an h:link to the new test page from the <code>/index.xhtml</code> (home).</span>
+            <br/>
+            Please keep this basic row-editable <code>p:dataTable</code> page as a reference.
+        </util:help>
+
+        <h2>#{title}</h2>
+
+        <h:form id="form">  
+
+            <p:messages id="messages" globalOnly="false" autoUpdate="true"/>                 
+
+            <p:dataTable                                         
+                id="dataTable" 
+                var="e" 
+                value="#{viewBean.entities}" 
+                editable="true"
+                >
+
+                <p:ajax                         
+                    event="rowEdit" 
+                    listener="#{viewBean.updateRow}" 
+                    />
+
+                <p:column 
+                    sortBy="#{e.detached}"
+                    >
+                    <f:facet name="header">
+                        <h:outputLabel 
+                            value="Detached ?"
+                            title="Whether a fake read query has made a deep detached clone of this. It should always be true in JSF user interfaces !"
+                            />
+                    </f:facet>
+                    <h:outputText value="#{e.detached}"/>
+                </p:column>
+                
+                <p:column 
+                    sortBy="#{e.id}"
+                    headerText="ID"
+                    >
+                    <h:outputText value="#{e.id}"/>
+                </p:column>
+
+                <p:column 
+                    sortBy="#{e.name}"
+                    >
+                    <f:facet name="header">
+                        <p:outputLabel 
+                            value="(Linked) Name: *"
+                            title="Follow the link to the standard entity view page by id"
+                            />
+                    </f:facet>
+                    <p:cellEditor>
+                        <f:facet name="output">
+                            <!--
+                            <h:outputText value="#{e.name}"/>
+                            -->
+                            <h:link outcome="view" value="#{e.name}">
+                                <f:param name="id" value="#{e.id}"/>
+                            </h:link>
+
+                        </f:facet>
+                        <f:facet name="input">
+                            <p:inputText 
+                                label="Name"
+                                id="name"
+                                value="#{e.name}"
+                                required="true"
+                                />
+                            <p:message
+                                for="name"
+                                display="icon"
+                                />
+                        </f:facet>
+                    </p:cellEditor>
+
+                </p:column>
+
+                <p:column 
+                    headerText="String: *"
+                    sortBy="#{e.stringValue}"
+                    >
+                    <p:cellEditor>
+                        <f:facet name="output">
+                            <h:outputText value="#{e.stringValue}"/>
+                        </f:facet>
+                        <f:facet name="input">
+                            <p:inputText 
+                                label="String"
+                                id="string"
+                                value="#{e.stringValue}"
+                                required="true"
+                                />
+                            <p:message
+                                for="string"
+                                display="icon"
+                                />
+                        </f:facet>
+                    </p:cellEditor>
+                </p:column>
+
+                <p:column 
+                    headerText="Integer: *"
+                    sortBy="#{e.integerValue}"
+                    >
+                    <p:cellEditor>
+                        <f:facet name="output">
+                            <h:outputText value="#{e.integerValue}"/>
+                        </f:facet>
+                        <f:facet name="input">
+                            <p:inputNumber 
+                                label="Integer value"
+                                id="integer"
+                                value="#{e.integerValue}"
+                                required="true"
+                                decimalPlaces="0"
+                                />
+                            <p:message
+                                for="integer"
+                                display="icon"
+                                />
+                        </f:facet>
+                    </p:cellEditor>
+                </p:column>
+
+                <p:column style="width:5em;" headerText="EDIT!">
+                    <p:rowEditor/>                
+                </p:column>
+
+            </p:dataTable>
+
+            <fieldset style="margin-top:2ex;">
+                <legend>Add new row</legend>
+
+                <p:panelGrid id="newRowGrid" columns="2">
+
+                    <p:outputLabel 
+                        value="Name:"
+                        for="name"
+                        />                        
+                    <h:panelGrid columns="2">
+                        <p:inputText 
+                            id="name"
+                            label="Name"
+                            value="#{viewBean.newName}"
+                            required="true"
+                            />
+                        <p:message for="name" display="icon"/>
+                    </h:panelGrid>
+
+                    <p:outputLabel 
+                        for="string"
+                        value="String value:"
+                        />                        
+                    <h:panelGrid columns="2">
+                        <p:inputText 
+                            id="string"
+                            label="String"
+                            value="#{viewBean.newString}"
+                            required="true"
+                            />
+                        <p:message for="string" display="icon"/>
+                    </h:panelGrid>
+
+                    <p:outputLabel 
+                        for="integer"
+                        value="Integer value:"
+                        />                        
+                    <h:panelGrid columns="2">
+                        <p:inputNumber
+                            id="integer"
+                            label="Integer"
+                            value="#{viewBean.newInteger}"
+                            decimalPlaces="0"
+                            required="true"
+                            />
+                        <p:message for="integer" display="icon"/>
+                    </h:panelGrid>
+                </p:panelGrid>
+
+                <p:commandButton
+                    action="#{viewBean.addNewEntity()}"
+                    process="@this newRowGrid"
+                    update="dataTable newRowGrid messages"
+                    value="Add new fake entity"
+                    style="margin-top:1ex;"
+                    />
+            </fieldset>
+
+        </h:form> 
+
+    </h:body>
+</html>

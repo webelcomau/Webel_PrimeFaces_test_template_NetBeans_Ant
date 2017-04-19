@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"                      
+      >
+
+    <!-- DO EDIT this title parameter as required -->         
+    <ui:param name="title" value="PrimeFaces: generic debug/test mini web app: [PLEASE RENAME THIS TITLE]"/>
+
+    <h:head>
+        <title>#{title}</title>
+    </h:head>
+
+    <h:body>
+
+        <!-- ALWAYS include this in every page or template !  -->
+        <ui:include src="common.xhtml"/>
+
+        <h2>#{title}</h2>
+
+        <!-- COMMENT OUT or delete once you've read this help served -->
+        <ui:include src="/help/help_first_steps.xhtml" />
+        <ui:include src="/help/help_rename_title.xhtml"/>
+        <ui:include src="/help/warn_index_vs_tests.xhtml"/>
+
+        <!-- DO EDIT this panel to describe your test -->
+        <p:panel
+            header="About this mini test web app" 
+            toggleable="true" 
+            collapsed="true"
+            style="width:50em;"
+            >
+            <p>
+                This mini web app is for testing [a row-editable p:datable].
+            </p>
+            <p class="nb">
+                [Amend with your own overview description of your specific test(s),<br/> 
+                what they are for, and what problem(s) you encountered.<br/> 
+                If you have issue numbers or external links for support tickets<br/>
+                or forum postings you may wish to also include them here.]
+            </p>
+        </p:panel>
+
+        <!-- COMMENT OUT or delete once you've read this help served -->
+        <ui:include src="/help/panel_about_header.xhtml"/>
+        <ui:include src="/help/panel_about_libraries.xhtml"/>
+        <ui:include src="/help/panel_about_fakequery.xhtml"/>
+
+        <!-- 
+        Please DO NOT add new test case links here, please do it below instead as indicated.
+        If you don't like seeing these default links please just comment the ui:include out.
+        -->
+        <ui:include src="/include/default_test_links.xhtml"/>
+
+
+        <fieldset style="margin:1ex 0;">
+            <legend>Links to test pages</legend>
+
+            <!-- PLEASE DO ADD YOUR NEW TEST CASE LINKS BELOW HERE -->
+            <p>
+                Your specific NEW test case(s) for support or forums:
+                <ul>
+                    <li>[Your NEW test case page h:link goes here !]</li>
+                </ul>
+            </p>
+
+        </fieldset>   
+
+    </h:body>
+</html>
+

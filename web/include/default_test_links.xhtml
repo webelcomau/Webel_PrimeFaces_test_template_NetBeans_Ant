@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:util="http://xmlns.jcp.org/jsf/composite/util"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <ui:composition>
+
+        <!-- Author: Darren Kelly (Webel IT Australia). PLEASE DO NOT EDIT.
+            
+        If you don't want it to appear in the index.xhtml just comment out or remove the ui:include.        
+        -->
+        <fieldset style="margin:2ex 0;width:65em;">
+            <legend>Links to default Webel JSF/PrimeFaces test pages</legend>
+
+        <p>
+            Please feel welcome to <b>copy (only) then rename </b>, <span style="color:magenta;">re-author (via the XHTML page comment headers)</span>, and adapt the JSF/PrimeFaces test pages these link to:
+            <ul>
+                <li>
+                    <h:link 
+                        outcome="dataTable" 
+                        value="TEST: basic row-editable p:dataTable with a list of fake entities (and a p:commandButton to add new ones)"
+                        />
+                </li>
+                <li>
+                    <h:link 
+                        outcome="view?id=0" 
+                        value="TEST: f:viewParam: view a fake entity by id (=0) using a p:panelGrid (and an h:link to its edit page)"
+                        />
+                </li>
+
+                <li>
+                    <h:link 
+                        outcome="edit?id=0" 
+                        value="TEST: f:viewParam: edit a fake entity by id (=0) using a p:panelGrid with validated input and p:commandButton submit"/>
+                </li>
+            </ul>
+        </p>
+        
+        <util:warn style="width:50em;">
+            Please DO NOT directly edit 
+            <code>FakeEntity</code>, 
+            <code>FakeQuery</code>,
+            and <code>ViewBean</code> or you may break the default test pages !
+        </util:warn>
+
+        <util:help style="width:50em;">
+            TIP: Please introduce new links with &lt;h:link&gt; to your NEW clearly described test case pages below !<br/>
+            If you have issue numbers for support tickets please include them in your link descriptions(s).
+        </util:help>  
+
+        <util:gotit_help/>
+
+        </fieldset>   
+        
+    </ui:composition>
+</html>
+

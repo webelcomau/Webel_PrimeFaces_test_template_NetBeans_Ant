@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:util="http://xmlns.jcp.org/jsf/composite/util">
+    <ui:composition>
+
+        <!-- Author: Darren Kelly (Webel IT Australia). PLEASE DO NOT EDIT.
+            
+        If you don't want it to appear in the index.xhtml just comment out or remove the ui:include.
+        
+        -->
+
+        <p:panel 
+            header="Help: About fake entities and fake queries (you may not need EJBs or a real database)"
+            toggleable="true"
+            collapsed="true"
+            style="width:50em;"
+            >
+            <p>                
+                Behind the scenes this mini web app offers three main classes:
+                <ul>
+                    <li>
+                        <code>FakeEntity</code>: a POJO with some basic fields one can get and set.
+                        It has a special field <code>detached</code> to mimic JPA detachment.
+                    </li>
+                    <li>
+                        <code>FakeQuery</code>: simulates some classic JPA EntityManager CRUD 
+                        interactions with FakeEntity items using a map of fake 
+                        entities. It does not actually write to a database,
+                        and it is not an actual EJB (or even an injected CDI bean).
+                    </li>
+                    <li>
+                        <code>ViewBean</code>: a CDI-compliant @ViewScoped JSF backing bean.
+                        It offers the ability to interact with <code>FakeEntity</code>
+                        items "fetched" via <code>FakeQuery</code>, almost like a real EJB query.
+                        Importantly, it performs lazy loading in <code>getEntities()</code>
+                        via <code>fetchEntities()</code>, but only on first access or after a <code>reset()</code>.
+                        It also offers a <code>setId(Long id)</code> for use with <code>f:viewParam</code> for view
+                        and edit pages for individual <code>FakeEntity</code> items.
+                    </li>
+                </ul>
+            </p>
+            <p>
+                You are most welcome to <b>copy then adapt</b> <code>FakeEntity</code>, <code>FakeQuery</code>, and 
+                <code>ViewBean</code>
+                as you require, that is what this template test app is for, but if you do, please:
+                <ul>
+                    <li>
+                        <span class="nb">Create a new package indicating your organisation and copy them renamed into it.</span>.
+                        <ul>
+                            <li> Please do not use <code>com.webel.test</code> packages for <b>copied/adapted</b> classes.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="nb">Re-author the Javadoc <code>@author</code> tag in the class docs of copied classes from 'Darren Kelly (Webel IT Australia)'
+                            to yourself</span>. I don't mind people <b>copying then adapting</b> this code; I do mind code introduced by other developers appearing to be attributed to me.
+                    </li>
+                    <li>
+                (The same applies to any <b>copied then adapted</b> JSF XHTML pages, 
+                please do re-author the header comments.)                        
+                    </li>
+                </ul>
+            </p>
+
+            <p>
+                You may of course introduce actual @EJBs or injectable CDI beans
+                in your tests. However, keep in mind that actual database interaction
+                makes your test web app far less portable and much harder to share.
+            </p>
+            <p>
+                You will likely be able to perform many JSF and PrimeFaces tests 
+                just using the simple <code>FakeQuery</code>/<code>FakeEntity</code> system 
+                offered here (although they can't imitate the full JPA query detach/merge process).
+            </p>
+
+            <util:gotit_help/> 
+
+        </p:panel>
+
+
+    </ui:composition>
+</html>
+

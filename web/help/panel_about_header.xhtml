@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:util="http://xmlns.jcp.org/jsf/composite/util">
+    <ui:composition>
+
+        <!-- Author: Darren Kelly (Webel IT Australia). PLEASE DO NOT EDIT.
+            
+        If you don't want it to appear in the index.xhtml just comment out or remove the ui:include.
+        
+        -->
+
+        <p:panel 
+            header="Help: Please always include the /common.xhtml header file !"
+            toggleable="true"
+            collapsed="true"
+            style="width:50em;"
+            >
+            <p>
+                Every JSF XHTML page or template you create (or copy from the examples)<br/> 
+                <b class="nb">should always, without exception,</b> include the 
+                <code>/common.xhtml</code> header,<br/> 
+                which shows:
+                <ul>
+                    <li>
+                        When the page was served.
+                    </li>
+                    <li>
+                        The running Mojarra (JSF implementation) version.
+                    </li>
+                    <li>
+                        The running PrimeFaces build version.
+                    </li>
+                    <li>
+                        The running Java version.
+                    </li>
+                    <li>
+                        A link back to this home (index) page, which has links to the actual test pages.
+                    </li>
+                </ul>         
+                You may wish to edit the IDE and Server info in the header, please see <code>/common.xhtml</code>.
+            </p>
+            <p>
+                BTW it also includes a CSS style file <code>/resources/css/styles.css</code>, which you may edit.
+            </p>
+
+            <util:gotit_help/>
+
+        </p:panel>
+
+    </ui:composition>
+</html>
+

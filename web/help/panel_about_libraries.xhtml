@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:util="http://xmlns.jcp.org/jsf/composite/util">
+    <ui:composition>
+
+        <!-- Author: Darren Kelly (Webel IT Australia). PLEASE DO NOT EDIT.
+            
+        If you don't want it to appear in the index.xhtml just comment out or remove the ui:include.
+        
+        -->
+
+        <p:panel 
+            header="Help: How to configure alternative Mojarra (JSF implementation) and Primefaces libraries"
+            toggleable="true"
+            collapsed="true"
+            style="width:50em;"
+            >
+            <p>
+                Often to test an issue one needs to experiment with different library versions and compare.
+                This is quite easily done with this mini NetBeans web app.
+            </p>
+
+            <p>
+                <em>
+                    This particular mini web app deliberately does not use Maven. This is the most 
+                    basic Ant-based NetBeans web app project type
+                    designed to be used completely offline and without any Maven setup.
+                    (Maven is however a very cool thing, and a Maven-based version might also be offered later too.)
+                </em>
+            </p>
+
+            <p>
+                By default this web app will use the Mojarra JSF implementation of your web app server
+                (Glassfish or Payara). To run against a specific Mojarra (or other JSF implementation) version:
+                <ul>
+                    <li>
+                        Download a Mojarra implementation JAR <a href="https://maven.java.net/content/repositories/releases/org/glassfish/javax.faces/" target="_blank">from the Glassfish Maven repository</a> (you don't need Maven).
+                    </li>
+                    <li>
+                        Place a clearly named and versioned <code>javax.faces-[version].jar</code> in the <code>./lib</code> folder of this project (do not over-write your server's version, as it may impact on other JSF web applications, and it's tedious).
+                    </li>
+                    <li>
+                        Assign it from the NetBeans IDE Projects window from the <b>Libraries</b> node for this project
+                        by right clicking and using just <b>Add JAR</b> (not as a full NetBeans Library)
+                        and <b>use the relative path</b> option.
+                    </li>
+                    <li>
+                        <span class="nb">Then uncomment BOTH LINES indicated in the <code>glassfish-web.xml</code> to <b><code>useBundledJsf</code></b>.</span>
+                    </li>   
+                    <li>
+                        Clean and build then run; the header will show you whether it caught the new version.
+                    </li>   
+                </ul>
+            </p>
+            <p>
+                To run a specific Primefaces version:
+                <ul>
+                    <li>
+                        You can directly download 
+                        <a href="https://www.primefaces.org/downloads/" target="_blank">Community Edition JARs for Primefaces from the main Primeface site</a> 
+                        (you may have to scroll down a bit), 
+                        or ELITE and PRO versions if you are a subscribed customer.
+                    </li>
+                    <li>
+                        Place a clearly named and versioned <code>primefaces-[version].jar</code> in the <code>./lib</code> folder of this project.
+                    </li>
+                    <li>
+                        In the Projects window under the <b>Libraries</b> node for this project 
+                        you might have to remove any existing Primefaces jar library assignment.
+                        (It won't delete the actual JAR from the <code>./lib</code>, it just un-assigns it.)
+                    </li>
+                    <li>                        
+                        Assign the new one from the NetBeans Projects window from the <b>Libraries</b> node 
+                        for this project
+                        by right clicking and using just <b>Add JAR</b> (not as a full NetBeans Library)
+                        and <b>use the relative path</b> option.                        
+                    </li>
+                    <li>
+                        Clean and build then run; the header will show you whether it caught the new version.
+                    </li>   
+                </ul>
+            </p>                
+
+            <util:gotit_help/>
+
+        </p:panel>
+
+    </ui:composition>
+</html>
+

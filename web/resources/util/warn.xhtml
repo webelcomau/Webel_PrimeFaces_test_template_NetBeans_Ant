@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+      >
+    <cc:interface
+        shortDescription="A warning box with some styling."
+        >
+        <cc:attribute 
+            shortDescription="The plain text warning message to display; otherwise you may use inserted children with markup."
+            name="value" 
+            required="false"
+            type="java.lang.String"
+            />
+        <cc:attribute 
+            shortDescription="Any additional style to be appended to the default style. Useful for width."
+            name="style"
+            required="false"
+           />
+    </cc:interface>
+
+    <cc:implementation>
+        <div id="#{cc.clientId}" class="warn-box" style="#{cc.attrs.style}">
+            <h:outputText
+                rendered="#{not empty cc.attrs.value}"
+                value="#{cc.attrs.value}"
+                />
+            <cc:insertChildren/>
+        </div>
+    </cc:implementation>
+</html>
+

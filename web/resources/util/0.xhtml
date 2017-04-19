@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+      >
+    <cc:interface
+        shortDescription="A template for composite components. Please copy and adapt."
+        >
+        <cc:attribute 
+            shortDescription="Example attribute for direct adaptation or copying; Consider introducing also a specific 'type' and a 'default'."
+            name="value" 
+            required="false"
+            />
+    </cc:interface>
+
+    <cc:implementation>
+        <div id="#{cc.clientId}">
+            <!-- 
+            A <span> wrapper may be used above instead of a <div> wrapper as needed.
+            To see why this is wrapper used and highly recommended, please visit: 
+            http://stackoverflow.com/questions/18379689/rerendering-composite-component-by-ajax/
+            http://stackoverflow.com/questions/20053256/using-id-attribute-in-jsf-2-composite-component-with-targets
+            -->
+            <h:outputText value="#{empty cc.attrs.value ? '?' : cc.attrs.value}"/>
+        </div>
+    </cc:implementation>
+</html>
+
