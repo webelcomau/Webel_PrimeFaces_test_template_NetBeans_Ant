@@ -16,7 +16,7 @@
     <h:body>
 
         <!-- ALWAYS include this in every page or template !  -->
-        <ui:include src="common.xhtml"/>
+        <ui:include src="/common.xhtml"/>
 
         <h2>#{title}</h2>
 
@@ -61,9 +61,10 @@
             <!-- PLEASE DO ADD YOUR NEW TEST CASE LINKS BELOW HERE -->
             <p>
                 Your specific NEW test case(s) for support or forums:
-                <ul>
+                <ol>
+                    <li><h:link outcome="/test/0" value="[STUB ONLY]"/></li>
                     <li>[Your NEW test case page h:link goes here !]</li>
-                </ul>
+                </ol>
             </p>
 
         </fieldset>   

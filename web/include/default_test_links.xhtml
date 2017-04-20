@@ -15,26 +15,26 @@
 
         <p>
             Please feel welcome to <b>copy (only) then rename </b>, <span style="color:magenta;">re-author (via the XHTML page comment headers)</span>, and adapt the JSF/PrimeFaces test pages these link to:
-            <ul>
+            <ol>
                 <li>
                     <h:link 
-                        outcome="dataTable" 
+                        outcome="/examples/dataTable" 
                         value="TEST: basic row-editable p:dataTable with a list of fake entities (and a p:commandButton to add new ones)"
                         />
                 </li>
                 <li>
                     <h:link 
-                        outcome="view?id=0" 
+                        outcome="/examples/view?id=0" 
                         value="TEST: f:viewParam: view a fake entity by id (=0) using a p:panelGrid (and an h:link to its edit page)"
                         />
                 </li>
 
                 <li>
                     <h:link 
-                        outcome="edit?id=0" 
+                        outcome="/examples/edit?id=0" 
                         value="TEST: f:viewParam: edit a fake entity by id (=0) using a p:panelGrid with validated input and p:commandButton submit"/>
                 </li>
-            </ul>
+            </ol>
         </p>
         
         <util:warn style="width:50em;">

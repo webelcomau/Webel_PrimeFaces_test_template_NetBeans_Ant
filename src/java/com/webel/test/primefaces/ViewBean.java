@@ -112,7 +112,7 @@ public class ViewBean implements Serializable {
             FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_INFO, msg, msg);
             FacesContext.getCurrentInstance().addMessage(null, facesMsg);
             echo(msg);
-            return "view?faces-redirect=true&id=" + selected.getId();
+            return "/examples/view?faces-redirect=true&id=" + selected.getId();
         }
     }
 

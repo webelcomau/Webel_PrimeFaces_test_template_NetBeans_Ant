@@ -14,7 +14,7 @@
      If you copy this page, please however change the authorship declaration.
     -->
 
-    <ui:param name="title" value="PrimeFaces: Webel test app: basic p:dataTable with row editing and add-row button"/>
+    <ui:param name="title" value="PrimeFaces: TEST: basic p:dataTable with row editing and add-row button"/>
 
     <h:head>
         <title>#{title}</title>
@@ -26,7 +26,7 @@
         <ui:debug hotkey="d" rendered="true"/>
         -->
 
-        <ui:include src="common.xhtml"/>
+        <ui:include src="/common.xhtml"/>
 
         <f:view>
             <f:metadata>
@@ -94,7 +94,7 @@
                             <!--
                             <h:outputText value="#{e.name}"/>
                             -->
-                            <h:link outcome="view" value="#{e.name}">
+                            <h:link outcome="/examples/view" value="#{e.name}">
                                 <f:param name="id" value="#{e.id}"/>
                             </h:link>
 

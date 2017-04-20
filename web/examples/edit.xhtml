@@ -14,7 +14,7 @@
     If you copy this page, please however change the authorship declaration.
     -->
 
-    <ui:param name="title" value="PrimeFaces: Webel test app: edit a FakeEntity by f:viewParam id"/>
+    <ui:param name="title" value="PrimeFaces: TEST: edit a FakeEntity by f:viewParam id"/>
     
     <h:head>
         <title>#{title}</title>
@@ -22,7 +22,7 @@
 
     <h:body>
 
-        <ui:include src="common.xhtml"/>        
+        <ui:include src="/common.xhtml"/>        
         
         <f:view>
             <f:metadata>
@@ -88,11 +88,10 @@
 
         <util:help style="width:30em;">
             TIP: You can find the IDs of all entities with links to their view pages<br/>
-            by id from the <h:link outcome="dataTable">example dataTable test page.</h:link>, which lists all entities.<br/>
+            by id from the <h:link outcome="/examples/dataTable">example dataTable test page.</h:link>, 
+            which lists all entities.<br/>
             The view page of each entity also has a link to its this edit page by id.
         </util:help>
-
-
 
     </h:body>
 </html>

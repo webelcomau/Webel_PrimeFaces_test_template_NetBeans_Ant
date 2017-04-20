@@ -14,7 +14,7 @@
     If you copy this page, please however change the authorship declaration.
     -->
 
-    <ui:param name="title" value="PrimeFaces: Webel test app: view a FakeEntity by f:viewParam id"/>
+    <ui:param name="title" value="PrimeFaces: TEST: view a FakeEntity by f:viewParam id"/>
     
     <h:head>
         <title>#{title}</title>
@@ -22,7 +22,7 @@
 
     <h:body>
 
-        <ui:include src="common.xhtml"/>
+        <ui:include src="/common.xhtml"/>
         
         <f:view>
             <f:metadata>
@@ -58,7 +58,7 @@
 
             <h:panelGroup layout="block" class="link-button">
                 <h:link 
-                    outcome="edit" 
+                    outcome="/examples/edit" 
                     value="EDIT!"                     
                     >
                     <f:param name="id" value="#{viewBean.selected.id}"/>
