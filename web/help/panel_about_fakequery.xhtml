@@ -27,7 +27,7 @@
                     </li>
                     <li>
                         <code>FakeQuery</code>: simulates some classic JPA EntityManager CRUD 
-                        interactions with FakeEntity items using a map of fake 
+                        interactions with <code>FakeEntity</code> items using a map of fake 
                         entities. It does not actually write to a database,
                         and it is not an actual EJB (or even an injected CDI bean).
                     </li>
@@ -35,10 +35,18 @@
                         <code>ViewBean</code>: a CDI-compliant @ViewScoped JSF backing bean.
                         It offers the ability to interact with <code>FakeEntity</code>
                         items "fetched" via <code>FakeQuery</code>, almost like a real EJB query.
-                        Importantly, it performs lazy loading in <code>getEntities()</code>
-                        via <code>fetchEntities()</code>, but only on first access or after a <code>reset()</code>.
-                        It also offers a <code>setId(Long id)</code> for use with <code>f:viewParam</code> for view
-                        and edit pages for individual <code>FakeEntity</code> items.
+                        <ul>
+                            <li>
+                                Importantly, it performs lazy loading in <code>getEntities()</code>
+                                via <code>fetchEntities()</code>, but only on first access or after a <code>reset()</code>.
+                                See the example <code>/web/dataTable.xhtml</code> test page.
+                            </li>
+                            <li>
+                                It also offers a <code>setId(Long id)</code> for use with <code>f:viewParam</code> 
+                                in the <code>view.xhtml</code> and <code>edit.xhtml</code> pages for 
+                                individual <code>FakeEntity</code> items.
+                            </li>
+                        </ul>                        
                     </li>
                 </ul>
             </p>
@@ -58,20 +66,21 @@
                             to yourself</span>. I don't mind people <b>copying then adapting</b> this code; I do mind code introduced by other developers appearing to be attributed to me.
                     </li>
                     <li>
-                (The same applies to any <b>copied then adapted</b> JSF XHTML pages, 
-                please do re-author the header comments.)                        
+                        (The same applies to any <b>copied then adapted</b> JSF XHTML pages, 
+                        please do re-author the header comments.)                        
                     </li>
                 </ul>
             </p>
 
             <p>
-                You may of course introduce actual @EJBs or injectable CDI beans
-                in your tests. However, keep in mind that actual database interaction
-                makes your test web app far less portable and much harder to share.
+                You may of course introduce actual @EJBs. However, keep in mind that actual database 
+                interaction makes your test web app far less portable and much harder to share. 
+                You may also use CDI bean inhjection in your tests, but keep in mind 
+                your focus should be on testing JSF and PrimeFaces, not underlying Java EE.
             </p>
             <p>
-                You will likely be able to perform many JSF and PrimeFaces tests 
-                just using the simple <code>FakeQuery</code>/<code>FakeEntity</code> system 
+                You will probably be able to prepare most JSF and PrimeFaces tests 
+                just using the simple <code>FakeQuery</code> and <code>FakeEntity</code> system 
                 offered here (although they can't imitate the full JPA query detach/merge process).
             </p>
 
