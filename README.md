@@ -13,10 +13,6 @@ Because this is a template project - designed to be **spawned then adapted** - t
 
 ------
 
-[TOC]
-
-------
-
 ## Foreword
 
 This project is developed and maintained by Darren Kelly (a.k.a. "Dr Darren") of [Webel IT Australia](https://www.webel.com.au) and [GreenSoft Australia Pty Ltd](http://www.greensoftaustralia.com) for our own purposes for quickly developing one-off JavaServer Faces (JSF) test web apps that use the [PrimeFaces](https://www.primefaces.org) toolkit for JSF.
@@ -61,14 +57,14 @@ This test web app template is designed to at least help address that 2nd point. 
 
 ### About licensing and strict indications of authorship
 
-*But first, the boring-yet-important part *:sleepy:. *C'mon, wake up, or you'll do something wrong !*
+*But first, the boring-yet-important part :sleepy:. C'mon, wake up, or you'll do something wrong !*
 
 This project is intended to be **copied then adapted** by others, so the [GNU GPLv3.0 License](https://choosealicense.com/licenses/gpl-3.0/) is used; if you offer it **adapted** to others that same license must be used. [PrimeFaces](https://www.primefaces.org/license/) itself uses the [Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/).
 
 There are however some very specific additional conditions concerning indications of authorship when **copying then adapting** JSF XHTML pages and Java code pages from this template project. Simply put:
 
->
 > ​*I don't mind people **copying then adapting** :innocent: this template project code, that it what is for.*
+>
 > ​*I do mind code introduced by other developers inadvertently appearing to be attributed :rage: to me .*
 >
 > (Dr Darren)
@@ -83,11 +79,11 @@ There are however some very specific additional conditions concerning indication
 - ​Please DO NOT simply directly edit any Java classes in or under `com.webel.test` packages :scream: !
 - ​Please DO NOT use `com.webel.test` packages/sub-packages for **copied and adapted** Java classes :astonished: !
 - Instead, please create a new package elsewhere indicating your own organisation `com.anothercompany.test` and copy your  - preferrably **renamed** - Java class(es) into it :wink:.
-- ​Then please immediately simply **re-author** :grinning: the Javadoc `@author` tag in the class docs of each **copied and adapted** class from `Darren Kelly (Webel IT Australia)` to: `@author Somebody Else`
+- ​Then please immediately simply **re-author** :grinning: the Javadoc `@author` tag in the class docs of each **copied and adapted** class from `@author Darren Kelly (Webel IT Australia)` to: `@author Somebody Else`
 
 Then the code is yours to do whatever you like with :yum:. I prefer this over using "originally authored by" or "adapted from" - polite as it seems - as that still does not make it clear who authored what.
 
-Also, this **copy, re-package, re-name, re-author** process helps preserve the `/web/examples` JSF test case pages. You are welcome to completely delete those from the web app once you've prepared your own test(s), along with the `com.webel.test.primefaces.ViewBean` backing bean Java class that drives them.
+Also, this **copy, re-package, re-name, re-author** process helps preserve the `/web/examples` JSF test case pages. You are welcome to completely delete those from the web app once you've prepared your own test(s), along with the `com.webel.test.primefaces.ViewBean` backing bean Java class that drives them if you are sure you don't need it for reference.
 
 
 
@@ -150,7 +146,7 @@ Make sure your Java run-time is up-to-date for your system (it was developed on 
 
 Please then **invest** some time to read the instructions in the **initially-collapsed** help panels (click on them to open them) in the home (index) page :innocent::
 
-- Later, once you've read all of the help panels  - and once you are ready to **adapt** the project - you may comment out or simply delete from the `index.html` the `<ui:include .. />` used for each help panel.
+- ​Later, once you've read all of the help panels  - and once you are ready to **adapt** the project - you may comment out or simply delete :scissors: from the `index.html` the `<ui:include .. />` used for each help panel.
 
 - There are 3 test case links in a fieldset at the bottom (deliberately) of the page. Please click on each one in turn and experiment. You can always navigate back via the **Home** button link at the top of each page:
 
@@ -168,7 +164,7 @@ Please then **invest** some time to read the instructions in the **initially-col
    - From `Webel_PrimeFaces_test_template`
    - To `[YourCompany]_PrimeFaces_test_[testname]`
      - If you are preparing a test for a specific issue support ticket consider using the issue number in the `[testname]` part !
-2. You can do this in the main NetBeans IDE *Projects* window by right-clicking on the project and choosing **Rename....**
+2. You can do this in the main NetBeans IDE *Projects* window by right-clicking on the project and choosing **Rename...**
    {0}. Please make sure you tick the **[✔] Also Rename Project Folder** option !
 3. In the top level `/web/index.xhtml`:
    - At the very top find the `<ui:param name="title" value=" …"/>` and give it a meaningful new title.
@@ -177,7 +173,7 @@ Please then **invest** some time to read the instructions in the **initially-col
      - `<ui:include src="/common.xhtml"/>`
    - Comment out (or simply delete :scissors:) every `<ui:include ... />` for help panels and help boxes:
      - You may then also completely delete the entire `/web/help` folder if you wish :relieved:.
-   - Comment out the `<ui:include ... />` for the default test links (it's best to keep the referenced file in case you want to examine the examples again later, unless you've done this many time before):
+   - Comment out the `<ui:include ... />` for the default test links (it's best to keep the referenced file in case you want to examine the examples again later, unless you've done this all before):
      - `<!-- <ui:include src="/include/default_test_links.xhtml"/> -->`
 4. Then **Clean and Build** and **Run** your renamed test web app **before** making any other JSF/XHTML code or Java class code modifications:
    {0}. You should see a home page with a diagnostic header, a title describing the test you will create, a `p:panel` that you will use to describe your test in more detail, and a fieldset with a link to a STUB test page (and with none of those initially-included help panels and help boxes you bothered to read thoroughly before still showing) :smirk:.
@@ -187,7 +183,7 @@ Please then **invest** some time to read the instructions in the **initially-col
 - Create a JSF test page. Please place it under `/web/test/`, NOT `/web/examples` :cop:. Keep it simple at first, and **please make sure you "test" something known to work first** :satisfied:, not something that fails:
   - There is a template "stub" test page  `/web/test/0.xhtml` that does almost nothing (except show you how to use the `<ui:include src="/common.xhtml"/>` and `<ui:param name="title" value=".."/>`). You may copy it as a starting point for a completely new test page.
   - But, if you want to populate a PrimeFaces component with some data, you may wish to **copy, re-author, then adapt** one of the existing test pages under `/web/examples/` for `FakeEntity`:
-    - ​If so, please DO please **re-author it** :innocent: completely to you (remove "Darren Kelly (Webel IT Australia)" from the free-style XML comment) and insert your own test's title description in `<ui:param name="title" value="[YOUR TEST PAGE TITLE]"/>`.
+    - ​If so, DO please **re-author it** :innocent: completely to you (remove "Darren Kelly (Webel IT Australia)" from the free-style XML comment) and insert your own test's title description in `<ui:param name="title" value="[YOUR TEST PAGE TITLE]"/>`.
   - Your test page has the dynamic diagnostics header in it right at the top, yes ? :+1:
     - `<ui:include src="/common.xhtml"/>`
 - In `/web/index.xhtml`, find this `p:panel` and give it a descriptive `header` and contents about your test(s):
@@ -218,7 +214,7 @@ Often to investigate an issue one needs to experiment with different library ver
 
   -  Download a Mojarra implementation JAR [from the Glassfish Maven repository](https://maven.java.net/content/repositories/releases/org/glassfish/javax.faces/) (you don't need Maven) and place the clearly named and versioned `javax.faces-[version].jar` in the `./lib` folder of your project. DO NOT over-write your server's version :cop:, as it may impact on other JSF web applications, and it's a bit tedious if you want to experiment quickly.
 
-- Assign one from the NetBeans IDE *Projects* window from the **Libraries** node for this project by right clicking and using just **Add JAR** (not as a full NetBeans Library) and **use the relative path** option.
+- Assign one from the NetBeans IDE *Projects* window from the **Libraries** node for your project by right clicking and using just **Add JAR** (not as a full NetBeans Library) and **use the relative path** option.
 
 - Then uncomment BOTH LINES indicated in the `/web/WEB-INF/glassfish-web.xml` to `useBundledJsf`:
 
@@ -235,9 +231,9 @@ Often to investigate an issue one needs to experiment with different library ver
 
 - Place a clearly named and versioned `primefaces-[version].jar` in the `./lib` folder of your project.
 
-- In the *Projects* window under the **Libraries** node for this project you might have to remove any existing Primefaces jar library assignment. (It won't delete the actual JAR from the `./lib`, it just un-assigns it.)
+- In the *Projects* window under the **Libraries** node for your project you might have to remove any existing Primefaces jar library assignment. (It won't delete the actual JAR from the `./lib`, it just un-assigns it.)
 
-- Assign the new one from the *Projects* window from the **Libraries** node for this project by right-clicking and using just **Add JAR** (not as a full NetBeans Library) and **use the relative path** option.
+- Assign the new one from the *Projects* window from the **Libraries** node for your project by right-clicking and using just **Add JAR** (not as a full NetBeans Library) and **use the relative path** option.
 
 - **Clean and Build** then **Run**; the `common.xhtml` header will show you whether it caught the new version.
 
@@ -305,13 +301,13 @@ To prepare and share a simple test web app illustrating a problem, you may not n
 
 Before you go over-board :hourglass:forking this project or Git-if-ying the **adapted** archive ZIP-download project, please consider first how you are going to submit it to the support team. Here are some simple options:
 
-- Share it as a ZIP, TGZ, or other compressed archive bundle via a Dropbox link (or using another cloud service such as Google Drive, iCloud, etc). You can email the link to a support email channel or add it to an support issue tracking system.
+- Share it as a ZIP, TGZ, or other compressed archive bundle via a Dropbox link (or using another cloud service such as Google Drive, iCloud, etc). You can email the link to a support email channel or add it to a support team's issue tracking system.
 - Upload it as a compressed archive bundle to the support team's issue tracking system, if it supports it:
   - If it's small enough, attach it to a direct support email, but only if asked to first by a support team.
 
 Even if you are sharing your test in WWW-public for Stackoverflow, you can still use a shared Dropbox link or other cloud service link (assuming you trust it). Or maybe you have your own trusted web or ftp server.
 
-### But I do want to use Git on my copied then adapted test web app
+### But I do want to use Git on my copied then adapted test web app, because my test case is quite complex, and I just love Git so much
 
 *Git is wonderful :+1:, and when preparing more complex test apps it can be useful to track your changes.*
 
@@ -319,12 +315,12 @@ The recommended way to use Git with **adaptations** of this project is NOT to [f
 
 1. Perform a [ZIP-archive Download](https://github.com/webelcomau/Webel_PrimeFaces_test_template_NetBeans_Ant/archive/master.zip) of the master branch, and rename the project (see details above).
 2. Run the **renamed** mini web app once as described above, before making any of your own tests, and read the help on the index (home) page - unless you've read it all before because you are a returning "customer". If you haven't already, try out the example test page links.
-3. Delete the `<ui:include ..>` for the help panels in `/web/index.xhtml` and the entire `/web/help` folder.
-4. **Delete this README.me** immediately after reading and create your own that explains **your** test case.
-5. If you've already seen them AND you are sure don't need them as a starting point, just delete the `/web/examples/` test JSF pages folder. (But don't delete the `FakeQuery`, `FakeEntity`, and `ViewBean` Java classes yet, they may prove useful.)
+3. ​Delete :scissors: the `<ui:include ..>` for the help panels in `/web/index.xhtml` and the entire `/web/help` folder.
+4. **Delete this README.me** immediately after reading it and create your own that explains **your** test case.
+5. If you've already seen them AND you are absolutely sure don't need them as a starting point, just delete the `/web/examples/` test JSF pages folder. (But don't delete the `FakeQuery`, `FakeEntity`, and `ViewBean` Java classes yet, they may prove useful.)
 6. Start a new Git project locally using `git init` with your own credentials. 
 
-​You may like to keep or adapt the (Mac-friendly) `.gitignore` and `.gitattributes` files in your project, which are both by default included in the ZIP-archive download. Note that  `/nbproject/private` is excluded from git commits and the archive download, because it may contain full paths that reference your development machine username :smiling_imp:, which is best kept out of any projects (and Git repositories) used just for testing. Likewise, the `.gitignore` excludes [JRebel](https://zeroturnaround.com/software/jrebel/)  (:+1:) hot reload :yum: technology `rebel.xml` config files.
+​You may like to keep or adapt the (Mac-friendly) `.gitignore` and `.gitattributes` files in your project, which are both by default included in the ZIP-archive download. Note that  `/nbproject/private` is excluded from git commits and the archive download, because it may contain full paths that reference your development machine username :smiling_imp:, which is best kept out of any projects (and Git repositories) used just for testing. Likewise, the `.gitignore` excludes `rebel.xml` config files from [JRebel](https://zeroturnaround.com/software/jrebel/)  (:+1:) hot reload :yum: technology.
 
 Using Git locally still does not mean you need a GitHub project just for a mini test app; you can always just [create a Git archive bundle from the command line](https://git-scm.com/docs/git-archive) for submission via the channels listed above. But if it's a complex test web app and you really want to share it with the world:
 
@@ -336,20 +332,20 @@ Also, if you wish to make your Git test case project public (rather than [inviti
 
 
 
-#### Some useful links for developing JSF test case projects and reporting issues
+### Some useful links for developing JSF test case projects and reporting issues
 
-Many suspected PrimeFaces issues are in fact either core JSF issues (Mojarra implementation issues) or just mis-understandings about how core JSF works:
+Many suspected PrimeFaces issues are in fact either **core** JSF issues (Mojarra implementation issues) or just **mis-understandings** :confused:about how core JSF works. Note that PrimeFaces makes much of the slog-work of core JSF redundant :smiley:, but you should still command core JSF fully to get the most out of PrimeFaces:
 
 - ​If it concerns a genuine **core** JSF issue (and you are sure you really command :sunglasses: core JSF):
 
   - Please report it at https://java.net/jira/browse/JAVASERVERFACES !
   - NetBeans 8.2 with GlassFish 4.1.1 is bundled with sleepy-old JSF version 2.2.8-12. Before reporting an issue, try out (using the `useBundledJsf` Library version approach described above) [the latest Mojarra](https://maven.java.net/content/repositories/releases/org/glassfish/javax.faces/) for JSF2.3, it does solve a lot of previous known issues.
 
-- ​If you have not yet read the entire [Web Tier](https://docs.oracle.com/javaee/7/tutorial/partwebtier.htm#BNADP) section of the Java EE 7 Tutorial about JSF you may find support teams and forum helpers :zzz: sending you back there again and again to read it all :stuck_out_tongue_closed_eyes:.
+- ​If you have not yet read the entire [Web Tier](https://docs.oracle.com/javaee/7/tutorial/partwebtier.htm#BNADP) section of the Java EE 7 Tutorial about JSF you may find support teams and forum helpers :sleeping: sending you back there again and again to read it all :stuck_out_tongue_closed_eyes:.
 
   - If you still don't know basic JSF well enough you might get told by support teams or forums that you should by now have read either or both of these excellent books from genuine experts behind JSF:
     - [Core JavaServer Faces (4th Edition)](https://www.amazon.ca/Core-JavaServer-Faces-David-Geary/dp/0133795748) covers most of JSF2.2 (and has a chapter on PrimeFaces).
-    - [JavaServer Faces (2.0) : The Complete Reference](http://www.goodreads.com/book/show/7213221-javaserver-faces-2-0): from 2010. Although it desperately needs an update for JSF2.3, it is still essential reading. Note that PrimeFaces makes much of the slog-work of core JSF redundant :smiley:.
+    - [JavaServer Faces (2.0) : The Complete Reference](http://www.goodreads.com/book/show/7213221-javaserver-faces-2-0): from 2010. Although it desperately needs an update for JSF2.3, it is still essential reading.
   - [The JSF 2.0 Cookbook](https://www.packtpub.com/web-development/jsf-20-cookbook) from 2010 is good (but likewise desperately needs updating for JSF2.3).
   - Both of these from Arjan Tijms' Weblog are highly recomended:
     - [What's new in JSF2.2](http://arjan-tijms.omnifaces.org/p/jsf-22.html) from 2013.
@@ -363,10 +359,10 @@ Many suspected PrimeFaces issues are in fact either core JSF issues (Mojarra imp
   - Always inspect the examples at the [PrimeFaces Showcase](https://www.primefaces.org/showcase/) first !
   - Make sure you've read the [PrimeFaces Documentation](https://www.primefaces.org/documentation/) first !
     - There is also a [PrimeFaces Cookbook - Second Edition](https://www.packtpub.com/application-development/primefaces-cookbook-second-edition) from 2015.
-  - Check the [PrimeFaces forum](https://forum.primefaces.org/), where you are more likely to get more help from the volunteers 💤 if you can provide a nice test web app (like one **adapted** from this mini test web app template).
+  - ​Check the [PrimeFaces forum](https://forum.primefaces.org/), where you are more likely to get more help from the volunteers :sleeping: if you can provide a nice test web app (like one **adapted** from this mini test web app template).
   - Even if you have a paid [PrimeFaces support subscription](https://www.primefaces.org/support/) you'll get faster help if you have a good test app demonstrating your problem.
 
-- ​The volunteer :zzz: IT community forum [StackOverflow](http://stackoverflow.com/) has a [[jsf]](http://stackoverflow.com/questions/tagged/jsf)  tag (see also version tags like [[jsf-2]](http://stackoverflow.com/questions/tagged/jsf-2) and [[jsf-2.3]](http://stackoverflow.com/questions/tagged/jsf-2.3)) as well as a dedicated [[primefaces]](http://stackoverflow.com/questions/tagged/primefaces) tag. Because the [PrimeFaces community forum](https://forum.primefaces.org/) is based on volunteered time :hourglass: it's often worth cross-posting also to StackOverflow, which has a lot of good JSF and PrimeFaces traffic.
+- ​The volunteer :sleeping: IT community forum [StackOverflow](http://stackoverflow.com/) has a [[jsf]](http://stackoverflow.com/questions/tagged/jsf)  tag (see also version tags like [[jsf-2]](http://stackoverflow.com/questions/tagged/jsf-2) and [[jsf-2.3]](http://stackoverflow.com/questions/tagged/jsf-2.3)) as well as a dedicated [[primefaces]](http://stackoverflow.com/questions/tagged/primefaces) tag. Because the [PrimeFaces community forum](https://forum.primefaces.org/) is based on volunteered time :hourglass: it's often worth cross-posting also to StackOverflow, which has a lot of good JSF and PrimeFaces traffic.
 
 - Check out also the [OmniFaces](http://showcase.omnifaces.org/) utilities designed "To make JSF life easier" :sunglasses:. 
 
@@ -374,13 +370,13 @@ Many suspected PrimeFaces issues are in fact either core JSF issues (Mojarra imp
 
 ### Get JRebel hot reload technology from ZeroTurnaround !
 
-​If you are doing a lot of Java EE web app development, it's a no brainer, get [JRebel](https://zeroturnaround.com/software/jrebel/)  (​:+1:​) hot reload ​:yum:​ technology. It will save you a heap of ​:hourglass:​time=money ​:moneybag:​, it will make your development time massively more efficient and enjoyable, and it will make preparing even simple test web apps much easier and faster.
+​If you are doing a lot of Java EE web app development, it's a no brainer, get [JRebel](https://zeroturnaround.com/software/jrebel/)  (:+1:) hot reload :yum: technology. It will save you a heap of :hourglass:time=money :moneybag:, it will make your development time massively more efficient and enjoyable, and it will make preparing even simple test web apps much easier and faster.
 
 ------
 
 #### Q: How did anybody edit such a long README.md so easily in Markdown syntax ?
 
-​There is apparently a new site :globe_with_meridians: called Google that [lists a gazillion pages comparing Markdown editors](https://www.google.com/search?q=best+markdown+editors) for all operating systems. I find [Typora](https://www.typora.io/) for Mac good, it has an excellent live preview, but some of the emojis look a bit different than on GitHub (and they don't have an :octocat: yet). But then again, [this cheat-sheet for GitHub emojis](https://www.webpagefx.com/tools/emoji-cheat-sheet/) also does not look exactly like on GitHub.
+​There is apparently a new site ​:globe_with_meridians:​ called Google that [lists a gazillion pages comparing Markdown editors](https://www.google.com/search?q=best+markdown+editors) for all operating systems. I find [Typora](https://www.typora.io/) for Mac good, it has an excellent live preview, but some of the emojis look a bit different than on GitHub (and they don't recognise an octocat :octocat: yet). But then again, [this cheat-sheet for GitHub emojis](https://www.webpagefx.com/tools/emoji-cheat-sheet/) also does not look exactly like on GitHub.
 
 Visit also this guide to [GitHub Flavored Markdown](https://help.github.com/articles/getting-started-with-writing-and-formatting-on-github/).
 
