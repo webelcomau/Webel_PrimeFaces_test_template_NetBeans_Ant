@@ -3,7 +3,7 @@ A template project for preparing mini [NetBeans IDE](https://netbeans.org/) Ant-
 
 #### *Q: Did you ZIP-download (or [fork](https://help.github.com/articles/fork-a-repo/)) this project to copy then adapt ?* 
 
-Then please delete and replace this long `README.md` file immediately **after reading it all** :scissors:!
+​Then please delete :scissors: and replace :pencil2: this long `README.md` file immediately **after reading it all** !
 
 #### *Q: Why the long README ?*
 
@@ -29,7 +29,7 @@ This project is not officially endorsed by [PrimeTek Informatics](http://primete
 
 ​Similarly, if you make test cases available to - for example - the Stackoverflow forums it is up to those volunteering :sleeping: to help you to determine whether any **adaptations** of this project you make and submit to them meet their requirements for [Minimal, Complete, and Verifiable](http://stackoverflow.com/help/mcve) examples.
 
-#### Disclaimer: PrimeFaces tests vs core JavaServer Faces (JSF) tests
+### Disclaimer: PrimeFaces tests vs core JavaServer Faces (JSF) tests
 
 You may choose to submit a **copied and adapted** test using this template to the core [JavaServer Faces (JSF) JIRA issue tracking system](https://java.net/jira/browse/JAVASERVERFACES/), it is up to Oracle to decide whether they'll accept a test with PrimeFaces content.
 
@@ -44,7 +44,7 @@ A famous "quote" [often attributed to Einstein](http://quoteinvestigator.com/201
  As software developers encountering issues, we are frequently told by 3rd-party software support team members that we are not to submit complex real-world web apps demonstrating suspected bugs/issues that we encounter while working on our complex real-world web apps. However, experience shows that:
 
 - It can be difficult to reproduce some problems in overly simplified mini test web apps.
-- It can be very time-consuming preparing suitable test web apps completely from scratch.
+- ​It can be very time-consuming :hourglass: preparing suitable test web apps completely from scratch.
 
 This test web app template is designed to at least help address that 2nd point. It provides some JSF XHTML example test pages and some supporting Java classes for you to **copy then adapt** to quickly prepare your own test cases, along with some developer comments to help you on your way. Read on for how it works.
 
@@ -56,12 +56,14 @@ This test web app template is designed to at least help address that 2nd point. 
 
 This project is intended to be **copied then adapted** by others, so the [GNU GPLv3.0 License](https://choosealicense.com/licenses/gpl-3.0/) is used; if you offer it **adapted** to others that same license must be used. [PrimeFaces](https://www.primefaces.org/license/) itself uses the [Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/).
 
-There are however some very specific additional conditions concerning indications of authorship when **copying and adapting** JSF XHTML pages and Java code pages from this template project. Simply put:
+There are however some very specific additional conditions concerning indications of authorship when **copying then adapting** JSF XHTML pages and Java code pages from this template project. Simply put:
 
-> ​*"I don't mind people **copying then adapting** :innocent: this template project code, that it what is for;*
+> 
+> ​*I don't mind people **copying then adapting** :innocent: this template project code, that it what is for.*
 > ​*I do mind code introduced by other developers inadvertently appearing to be attributed :rage: to me .*
 >
 > (Dr Darren)"
+> 
 
 Therefore please:
 
@@ -72,7 +74,7 @@ Therefore please:
   - Create a new package indicating your organisation and copy your **renamed** Java class into it :wink:.
 - ​Immediately re-author :grinning: the Javadoc `@author` tag in the class docs of each **copied and adapted** class from 'Darren Kelly (Webel IT Australia)' to yourself.
 
-Then the code is yours to do whatever you like with :yum:. Also, this process helps preserve the example test cases. You are welcome to completely delete those from the web app once you've prepared your own test.
+Then the code is yours to do whatever you like with :yum:. Also, this process helps preserve the example test cases. You are welcome to completely delete those from the web app once you've prepared your own test(s).
 
 
 
@@ -80,9 +82,9 @@ Then the code is yours to do whatever you like with :yum:. Also, this process he
 
 When you run it it offers an `index.xhtml` home page with some (easily removed) explanatory help panels and links to some example PrimeFaces test pages. That home page acts as a launch-pad to the actual test:
 
-- ​BTW, please DO NOT develop your own test(s) directly in the `index.xhtml` home page :angry: ! Link to your test(s) from it, using the dedicated `<fieldset>` for test links at the bottom of the home page.
+- ​BTW, please DO NOT develop your own test(s) directly in the `index.xhtml` home page :angry: ! Link to your test(s) from it.
 
-It uses a **dynamic, interrogative, header** (on every JSF page that includes the `/common.xhtml`) that shows:
+There is a **dynamic, interrogative, header** (on every JSF page that includes the `/common.xhtml`) that shows:
 
 1. The running Mojarra (JSF implementation) version.
 2. The running PrimeFaces build version.
@@ -95,9 +97,9 @@ It offers three example test pages:
 
 1. A CDI-compatible `@ViewScoped` page with a row-editable `p:dataTable`, being one of the most powerful and useful PrimeFaces components. It also has a `p:commandButton` for adding new fake entity items:
    - There is some basic JSF validation and `p:inputNumber` validation.
-2. A simple view page with a `p:panelGrid` for showing a fake entity by `id`, gleaned using an `f:viewParam`:
+2. A simple view page with a `p:panelGrid` for showing a fake entity by `id`, gleaned using `f:viewParam`:
    - The view page has an `h:link` to a simple edit page for the same fake entity, by `id`.
-3. A simple edit page with a `p:panelGrid` for showing a fake entity by `id`, gleaned using an `f:viewParam`:
+3. A simple edit page with a `p:panelGrid` for showing a fake entity by `id`, gleaned using `f:viewParam`:
    - There is some basic JSF validation and `p:inputNumber` validation.
    - Saving the edit form successfully takes you back to the view page.
 
@@ -112,12 +114,12 @@ That's deliberately all it **does**. However, it offers some other useful featur
    - Alternatively, you may install and use [Payara](http://www.payara.fish) (currently Payara41, v171), but if you do please be aware that somebody else running your test may then not have the identical server setup !
 3. From the [GitHub project page](https://github.com/webelcomau/Webel_PrimeFaces_test_template_NetBeans_Ant) perform a ZIP-Archive download by clicking on the **Clone or download** button once then choose **Download ZIP** (or just use [this master archive download link](https://github.com/webelcomau/Webel_PrimeFaces_test_template_NetBeans_Ant/archive/master.zip)):
    - Please **DO NOT use the full Git clone option** ! It's better to re-Git an archive download (see below).
-   - Experts may wish to nevertheless [fork](https://help.github.com/articles/fork-a-repo/) **then adapt** this project. If you do, please follow the special instructions concerning re-authoring at the top of this README, and the instructions below about renaming the test page titles. **Pull requests from forks will however NOT be accepted.**
+   - ​Experts :sunglasses: may wish to nevertheless [fork](https://help.github.com/articles/fork-a-repo/) **then adapt** this project. If you do, please follow the special instructions concerning re-authoring at the top of this README, and the instructions below about renaming the test page titles :angel:. **Pull requests from forks will however NOT be accepted.**
 4. Unzip the downloaded `Webel_PrimeFaces_test_template_NetBeans_Ant-master.zip` somewhere:
    - It will unzip as a folder `Webel_PrimeFaces_test_template_NetBeans_Ant-master`.
 5. Open that project folder in NetBeans IDE.
 6. **Clean and Build** the project in NetBeans IDE (right click on the project node in the *Projects* window).
-7. (It's best to ensure your Glassfish web app server does not have any other deployed apps running.)
+7. (It's best to ensure your Glassfish web app server does not have any other deployed apps running; if it does, undeploy them. It's also a good idea to restart the server.)
 8. **Run** the project, it will open the `index.xhtml `home page in the whatever browser is set for NetBeans.
 
 
@@ -139,7 +141,7 @@ Please then take time to read the instructions in the help panels in the home (i
 
 ### How do I adapt the project for my own tests ?
 
-You've read the instructions at the top about re-authoring **copied then adapted** XHTML pages and Java code, right ? And you've read all of the help boxes and panels on the home page, right ? Time to adapt !
+​You've read the instructions at the top about re-authoring **copied then adapted** XHTML pages and Java code, right :innocent: ? And you've read all of the help boxes and panels on the home page, right :+1: "? Time to adapt !
 
 Please first immediately perform these steps:
 
@@ -152,30 +154,30 @@ Please first immediately perform these steps:
 3. In the top level `/web/index.xhtml`:
    - At the very top find the `<ui:param name="title" value=" …"/>` and give it a meaningful new title.
      - `<ui:param name="title" value="PrimeFaces: test web app: [PLEASE RENAME]"/>`
-   - **DO NOT comment out or delete the following line**, it should be at the top of every JSF page or JSF template, so that the date/time diagnostics and library versions appear every time a page is served:
+   - **DO NOT comment out or delete the following line**, it should be at the top of every JSF page or JSF template, so that the date/time diagnostics and library versions appear in the page header every time a page is served:
      - `<ui:include src="common.xhtml"/>`
-   - Comment out (or simply delete) every `<ui:include ... />` for help panels and help boxes:
+   - Comment out (or simply delete :scissors:) every `<ui:include ... />` for help panels and help boxes:
      - You may then also completely delete the entire `/web/help` folder if you wish :relieved:.
    - Comment out the `<ui:include ... />` for the default test links (it's best to keep the referenced file in case you want to examine the examples again later, unless you've done this many time before):
      - `<ui:include src="/include/default_test_links.xhtml"/>`
 4. Then **Clean and Build** and **Run** your renamed test web app **before** making any other JSF/XHTML code or Java class code modifications.
 
-You are now ready to start creating your own test web app variation with **new** test pages:
+You are now ready to start creating your own test web app variation with **new** test pages :grinning::
 
-- Create your test page. It's entirely up to you what it does and where it lives, but keep it simple at first:
+- Create your JSF test page. It's entirely up to you what it does and where it lives, but keep it simple at first:
   - You may wish to **copy, re-author, then adapt** one of the existing test page examples for `FakeEntity`:
-    - Please DO remove any references to **Webel IT Australia** in **copied and adapted** page titles.
+    - If so, please DO remove any references to **Webel IT Australia** in **copied and adapted** page title defined in `<ui:param name="title" value=".."/>`, and insert your own title description.
   - Your test page has this in it right at the top, yes ? :angel:
     - `<ui:include src="common.xhtml"/>`
 - In the `index.xhtml`, find this `p:panel` and give it a descriptive title and contents about your test(s):
   - `<p:panel header="About this mini test web app" ..`
   - If you are reporting on an issue with an external support page consider including a link to it there.
   - At the bottom there is a simple `<fieldset>` around some `<ul> <li>` list items with this legend:
-  - `<legend>Links to test pages</legend>`
-  - Place a well-described `<h:link>` to your test page inside a list item `<li>…</li>`.
-- Then **Clean and Build** and **Run** and see whether your test app and test page runs ok.
+    - `<legend>Links to test pages</legend>`
+    - Place a well-described `<h:link>` to your test page inside a list item `<li>…</li>`.
+- Then **Clean and Build** and **Run** and see whether your test web app and test JSF page runs ok.
 
-​Congratulations :+1: ! You are off and running with your own version of the test web app with your own tests. It's time to find out what else the template web app offers to make preparing your tests easier.
+​Congratulations ​:+1:​ ! You are off and running with your own version of the test web app with your own tests. It's time to find out what else the template web app offers to make preparing your tests easier.
 
 
 
@@ -323,7 +325,7 @@ Also, if you wish to make your Git test case project public (rather than [inviti
 
 #### *Q: Did you ZIP-download (or [fork](https://help.github.com/articles/fork-a-repo/)) this project to **copy then adapt** ?*
 
-Then please delete and replace this `README.md` file immediately **after reading it all** !
+​Then please delete :scissors: and replace :pencil2: this long `README.md` file immediately **after reading it all** !
 
 #### 
 
