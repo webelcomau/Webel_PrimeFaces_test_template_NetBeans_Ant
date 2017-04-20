@@ -346,13 +346,12 @@ Many suspected PrimeFaces issues are in fact either **core** JSF issues (Mojarra
   - If you still don't know basic JSF well enough you might get told by support teams or forums that you should by now have read either or both of these excellent books from genuine experts behind JSF:
     - [Core JavaServer Faces (4th Edition)](https://www.amazon.ca/Core-JavaServer-Faces-David-Geary/dp/0133795748) covers most of JSF2.2 (and has a chapter on PrimeFaces).
     - [JavaServer Faces (2.0) : The Complete Reference](http://www.goodreads.com/book/show/7213221-javaserver-faces-2-0): from 2010. Although it desperately needs an update for JSF2.3, it is still essential reading.
-  - [The JSF 2.0 Cookbook](https://www.packtpub.com/web-development/jsf-20-cookbook) from 2010 is good (but likewise desperately needs updating for JSF2.3).
-  - Both of these from Arjan Tijms' Weblog are highly recomended:
+  - [The JSF 2.0 Cookbook](https://www.packtpub.com/web-development/jsf-20-cookbook) from 2010 is good (but likewise desperately needs updating for JSF2.3). The same author Anghel Leonard however now also offers [Mastering JavaServer Faces 2.2](https://www.packtpub.com/application-development/mastering-javaserver-faces-22) from 2014.
+  - Both of these from Arjan Tijms' Weblog are highly recommended:
     - [What's new in JSF2.2](http://arjan-tijms.omnifaces.org/p/jsf-22.html) from 2013.
     - [What's new in JSF2.3](http://arjan-tijms.omnifaces.org/p/jsf-23.html) from 2016.
 
-
-- And from Andy Schwartz's Weblog 2009: [What's New in JSF2](https://andyschwartz.wordpress.com/2009/07/31/whats-new-in-jsf-2/) (has some good further reading links).
+  - And from Andy Schwartz's Weblog 2009: [What's New in JSF2](https://andyschwartz.wordpress.com/2009/07/31/whats-new-in-jsf-2/) (has some good further reading links).
 
 - For suspected **PrimeFaces** issues:
 
@@ -376,15 +375,13 @@ Many suspected PrimeFaces issues are in fact either **core** JSF issues (Mojarra
 
 #### Q: How did anybody edit such a long README.md so easily in Markdown syntax ?
 
-​There is apparently a new site ​:globe_with_meridians:​ called Google that [lists a gazillion pages comparing Markdown editors](https://www.google.com/search?q=best+markdown+editors) for all operating systems. I find [Typora](https://www.typora.io/) for Mac good, it has an excellent live preview, but some of the emojis look a bit different than on GitHub (and they don't recognise an octocat :octocat: yet). But then again, [this cheat-sheet for GitHub emojis](https://www.webpagefx.com/tools/emoji-cheat-sheet/) also does not look exactly like on GitHub.
-
-Visit also this guide to [GitHub Flavored Markdown](https://help.github.com/articles/getting-started-with-writing-and-formatting-on-github/).
+​There is apparently a new site :globe_with_meridians: called Google that [lists a gazillion pages comparing Markdown editors](https://www.google.com/search?q=best+markdown+editors) for all operating systems. I find [Typora](https://www.typora.io/) for Mac good, it has an excellent live preview, but some of the emojis look a bit different than on GitHub (and they don't recognise an octocat :octocat: yet). But then again, [this cheat-sheet for GitHub emojis](https://www.webpagefx.com/tools/emoji-cheat-sheet/) also does not look exactly like on GitHub. Visit also this guide to [GitHub Flavored Markdown](https://help.github.com/articles/getting-started-with-writing-and-formatting-on-github/).
 
 ------
 
 #### Q: Did you ZIP-download (or [fork](https://help.github.com/articles/fork-a-repo/)) this project to **copy then adapt** ?
 
-​Then please delete :scissors: and replace :pencil2: this long `README.md` file immediately **after reading it all** !
+​Then please delete ​:scissors:​ and replace ​:pencil2:​ this long `README.md` file immediately **after reading it all** !
 
 #### 
 
