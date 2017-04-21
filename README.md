@@ -5,7 +5,7 @@ A template project for preparing mini [NetBeans IDE](https://netbeans.org/) Ant-
 
 #### *Did you [ZIP-download](https://github.com/webelcomau/Webel_PrimeFaces_test_template_NetBeans_Ant/archive/master.zip) (or [fork](https://help.github.com/articles/fork-a-repo/)) this project to copy then adapt ?* 
 
-​Then please delete ​:scissors:​ and replace ​:pencil2:​ this long `README.md` file immediately **after reading it all** !
+​Then please delete :scissors: and replace :pencil2: this long `README.md` file immediately **after reading it all** !
 
 #### *Q: Why the long README ?*
 
@@ -15,7 +15,7 @@ Because this is a template project - designed to be **spawned then adapted** - t
 
 ## Foreword
 
-This project is developed and maintained by Darren Kelly (a.k.a. "Dr Darren") of [Webel IT Australia](https://www.webel.com.au) and [GreenSoft Australia Pty Ltd](http://www.greensoftaustralia.com) for our own purposes for quickly developing one-off JavaServer Faces (JSF) test web apps that use the [PrimeFaces](https://www.primefaces.org) UI framework/toolkit for JSF, for submission to the PrimeFaces support team, the PrimeFaces community forum, and public forums such as Stackoverflow.
+This project is developed and maintained by Darren Kelly (a.k.a. "Dr Darren") of [Webel IT Australia](https://www.webel.com.au) and [GreenSoft Australia Pty Ltd](http://www.greensoftaustralia.com) for our own purposes for quickly developing one-off JavaServer Faces (JSF) test web apps that use the [PrimeFaces](https://www.primefaces.org) UI framework/toolkit for JSF, for submission to the PrimeFaces support team, the PrimeFaces community forum, and public forums such as Stackoverflow. 
 
 *It is offered to the JSF community (without any warranty or guarantee of fitness for any purpose) in the hope that it may also be of use to others for developing your own **adapted** mini test web app projects.*
 
@@ -27,9 +27,9 @@ You are however welcome to provide feedback and make suggestions about the use o
 
 ### Disclaimer
 
-This project is not officially endorsed by [PrimeTek Informatics](http://primetek.com.tr/), developers of the [PrimeFaces](https://www.primefaces.org) JSF toolkit; It is up to the PrimeFaces support team or community forum volunteers 💤 to determine whether any **adaptations** of this project you make and submit to them meet their requirements for issue test case submissions. 
+​This project is not officially endorsed by [PrimeTek Informatics](http://primetek.com.tr/), developers of the [PrimeFaces](https://www.primefaces.org) JSF toolkit; It is up to the PrimeFaces support team or community forum volunteers :sleeping: to determine whether any **adaptations** of this project you make and submit to them meet their requirements for issue test case submissions. 
 
-Similarly, if you make test cases available to, for example, the public Stackoverflow forums it is up to the developers volunteering 💤 to help you to determine whether any **adaptations** of this project you make and submit for them to test meet their requirements for [Minimal, Complete, and Verifiable](http://stackoverflow.com/help/mcve) examples.
+​Similarly, if you make test cases available to, for example, the public Stackoverflow forums it is up to the developers volunteering :sleeping: to help you to determine whether any **adaptations** of this project you make and submit for them to test meet their requirements for [Minimal, Complete, and Verifiable](http://stackoverflow.com/help/mcve) examples.
 
 ### Disclaimer: PrimeFaces tests vs core JavaServer Faces (JSF) tests
 
@@ -47,7 +47,7 @@ A famous "quote" [often attributed to Einstein](http://quoteinvestigator.com/201
  As software developers encountering issues, we are frequently told by 3rd-party software support team members that we are not to submit complex real-world web apps demonstrating suspected bugs/issues that we encounter while working on our complex real-world web apps. However, experience shows that:
 
 - It can be extremely difficult to reproduce some problems in overly-simplified mini test web apps.
-- ​It can be very time-consuming :hourglass: preparing suitable test web apps completely from scratch.
+- It can be very time-consuming :hourglass: preparing suitable test web apps completely from scratch.
 
 This test web app template is designed to at least help address that 2nd point. It provides some JSF XHTML example test pages and some supporting Java classes for you to **copy then adapt** to quickly prepare your own test cases, along with some developer comments to help you on your way. Read on for how it works.
 
@@ -61,7 +61,7 @@ This project is intended to be **copied then adapted** by others, so the [GNU GP
 
 There are however some very specific additional conditions concerning indications of authorship when **copying then adapting** JSF XHTML pages and Java code pages from this template project. Simply put:
 
-> ​*I don't mind people **copying then adapting** :innocent: this template project code, that it what is for.*
+> ​*I don't mind people **copying then adapting** :innocent: this template project code at all, that it what is for.*
 >
 > ​*I do mind code introduced by other developers inadvertently appearing to be attributed :rage: to me .*
 >
@@ -77,11 +77,11 @@ There are however some very specific additional conditions concerning indication
 - ​Please DO NOT simply directly edit any Java classes in or under `com.webel.test` packages :scream: !
 - ​Please DO NOT use `com.webel.test` packages/sub-packages for **copied and adapted** Java classes :astonished: !
   - Instead, please create a new package elsewhere indicating your own organisation `com.anothercompany.test` and copy your  - preferrably **renamed** - Java class(es) into it :wink:.
-  - ​Then please immediately simply **re-author** :grinning: the Javadoc `@author` tag in the class docs of each **copied and adapted** class from `@author Darren Kelly (Webel IT Australia)` to: `@author Somebody Else`
+  - ​Then please immediately simply **re-author** :grinning: the Javadoc `@author` tag in the class docs of each **copied and adapted** class from `@author Darren Kelly (Webel IT Australia)` to `@author Somebody Else`.
 
 Then the code is yours to do whatever you like with :yum:. I prefer this over using "originally authored by" or "adapted from" - polite as it seems - as that still does not make it clear who authored what.
 
-Also, this **copy, re-package, re-name, re-author** process helps preserve the `/web/examples` JSF test case pages. You are welcome to completely delete those from the web app once you've prepared your own test(s), along with the `com.webel.test.primefaces.ViewBean` backing bean Java class that drives them if you are sure you don't need it for reference.
+​Also, this **copy, re-package, re-name, re-author** process helps preserve the `/web/examples` JSF test case pages. You are welcome to completely delete :scissors: those from the web app once you've prepared your own test(s), along with the `com.webel.test.primefaces.ViewBean` backing bean Java class that drives them if you are not using it and you are absolutely sure you don't need it for reference.
 
 
 
@@ -91,7 +91,7 @@ When you run it it offers an `index.xhtml` home page with some (easily removed) 
 
 - ​BTW, please DO NOT develop your own test(s) directly in the `index.xhtml` home page :angry: ! Link to your test(s) from it.
 
-There is a **dynamic, interrogative, header** (on every JSF page with `<ui:include src="/common.xhtml"/> `that shows:
+There is a **dynamic, interrogative, header** (on every JSF page with `<ui:include src="/common.xhtml"/>`) that shows:
 
 1. The running Mojarra (JSF implementation) version.
 2. The running PrimeFaces build version.
