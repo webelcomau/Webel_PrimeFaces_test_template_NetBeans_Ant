@@ -3,9 +3,9 @@ A template project for preparing mini [NetBeans IDE](https://netbeans.org/) Ant-
 
 ------
 
-#### *Q: Did you ZIP-download (or [fork](https://help.github.com/articles/fork-a-repo/)) this project to copy then adapt ?* 
+#### *Did you [ZIP-download](https://github.com/webelcomau/Webel_PrimeFaces_test_template_NetBeans_Ant/archive/master.zip) (or [fork](https://help.github.com/articles/fork-a-repo/)) this project to copy then adapt ?* 
 
-​Then please delete :scissors: and replace :pencil2: this long `README.md` file immediately **after reading it all** !
+​Then please delete ​:scissors:​ and replace ​:pencil2:​ this long `README.md` file immediately **after reading it all** !
 
 #### *Q: Why the long README ?*
 
@@ -15,27 +15,25 @@ Because this is a template project - designed to be **spawned then adapted** - t
 
 ## Foreword
 
-This project is developed and maintained by Darren Kelly (a.k.a. "Dr Darren") of [Webel IT Australia](https://www.webel.com.au) and [GreenSoft Australia Pty Ltd](http://www.greensoftaustralia.com) for our own purposes for quickly developing one-off JavaServer Faces (JSF) test web apps that use the [PrimeFaces](https://www.primefaces.org) toolkit for JSF.
+This project is developed and maintained by Darren Kelly (a.k.a. "Dr Darren") of [Webel IT Australia](https://www.webel.com.au) and [GreenSoft Australia Pty Ltd](http://www.greensoftaustralia.com) for our own purposes for quickly developing one-off JavaServer Faces (JSF) test web apps that use the [PrimeFaces](https://www.primefaces.org) UI framework/toolkit for JSF, for submission to the PrimeFaces support team, the PrimeFaces community forum, and public forums such as Stackoverflow.
 
-*It is offered to the JSF community (without any warranty or guarantee of fitness for any purpose) in the hope that it may also be of use to others, especially for submitting mini test web apps to the PrimeFaces support team and/or to the Stackoverflow forums as **adapted** projects.*
+*It is offered to the JSF community (without any warranty or guarantee of fitness for any purpose) in the hope that it may also be of use to others for developing your own **adapted** mini test web app projects.*
 
 **This project does not offer GitHub collaboration invitations or accept pull requests from forks !** 
 
-You are however welcome to make feature suggestions or report issues via the GitHub [issues reporting](https://github.com/webelcomau/Webel_PrimeFaces_test_template_NetBeans_Ant/issues) mechanism. If it does not run for you, install [NetBeans IDE](https://netbeans.org/)  fresh, follow this README, then it will :+1:.
+You are however welcome to provide feedback and make suggestions about the use of JSF and PrimeFaces in the template project test examples via the GitHub [issues reporting](https://github.com/webelcomau/Webel_PrimeFaces_test_template_NetBeans_Ant/issues) mechanism. If it does not run for you, install [NetBeans IDE](https://netbeans.org/)  fresh, follow this README, then it will :+1:.
 
 **This project is NOT commercially supported, and response to any issue reports may be sporadic.**
 
-*It is designed to save Webel IT Australia and Dr Darren time :hourglass:preparing frequent test web apps; if it doesn't save **you** time, don't **you** use it (or at least take the time to read this entire README through once properly) :innocent:.*
-
 ### Disclaimer
 
-This project is not officially endorsed by [PrimeTek Informatics](http://primetek.com.tr/), developers of the [PrimeFaces](https://www.primefaces.org) JSF toolkit; It is up to the PrimeFaces support team to determine whether any **adaptations** of this project you make and submit to them meet their requirements for issue test case submissions. 
+This project is not officially endorsed by [PrimeTek Informatics](http://primetek.com.tr/), developers of the [PrimeFaces](https://www.primefaces.org) JSF toolkit; It is up to the PrimeFaces support team or community forum volunteers 💤 to determine whether any **adaptations** of this project you make and submit to them meet their requirements for issue test case submissions. 
 
-​Similarly, if you make test cases available to, for example, the public Stackoverflow forums it is up to the developers volunteering :sleeping: to help you to determine whether any **adaptations** of this project you make and submit for them to test meet their requirements for [Minimal, Complete, and Verifiable](http://stackoverflow.com/help/mcve) examples.
+Similarly, if you make test cases available to, for example, the public Stackoverflow forums it is up to the developers volunteering 💤 to help you to determine whether any **adaptations** of this project you make and submit for them to test meet their requirements for [Minimal, Complete, and Verifiable](http://stackoverflow.com/help/mcve) examples.
 
 ### Disclaimer: PrimeFaces tests vs core JavaServer Faces (JSF) tests
 
-You may choose to submit a **copied then adapted** test using this template to the core [JavaServer Faces  JIRA issue tracking system](https://java.net/jira/browse/JAVASERVERFACES/), it is up to [Oracle and the Java Community](http://www.oracle.com/technetwork/java/community/index.html) to decide whether they'll accept a test that includes PrimeFaces content.
+You may choose to submit a **copied then adapted** test using this template to the core [JavaServer Faces  JIRA issue tracking system](https://java.net/jira/browse/JAVASERVERFACES/), it is up to [Oracle and the Java Community](http://www.oracle.com/technetwork/java/community/index.html) members to decide whether they'll accept a test that includes PrimeFaces content.
 
 
 
@@ -74,12 +72,12 @@ There are however some very specific additional conditions concerning indication
 
 - When you **copy then adapt** a JSF XHTML file, please immediately **rename it and re-author it**  😀 using a free-style authorship indication in an XML header comment near the top of each XHTML page:
   - `<!-- Author: Somebody Else from AnotherCompany -->`
-  - There are some diagnostic JSF composite components like `<util:warn value="warning message"/>` and a template component `<util:0/>`under `/web/resources/util`. You are welcome to use them **as is**, just include this namespace: `xmlns:util="http://xmlns.jcp.org/jsf/composite/util`.
+  - There are some diagnostic JSF composite components like `<util:warn value="warning message"/>` . You are welcome to use them **as is**, just include this namespace: `xmlns:util="http://xmlns.jcp.org/jsf/composite/util`.
   - But if you want to **adapt** any of them please **copy, rename, and re-author** 😃 them first.
 - ​Please DO NOT simply directly edit any Java classes in or under `com.webel.test` packages :scream: !
 - ​Please DO NOT use `com.webel.test` packages/sub-packages for **copied and adapted** Java classes :astonished: !
-- Instead, please create a new package elsewhere indicating your own organisation `com.anothercompany.test` and copy your  - preferrably **renamed** - Java class(es) into it :wink:.
-- ​Then please immediately simply **re-author** :grinning: the Javadoc `@author` tag in the class docs of each **copied and adapted** class from `@author Darren Kelly (Webel IT Australia)` to: `@author Somebody Else`
+  - Instead, please create a new package elsewhere indicating your own organisation `com.anothercompany.test` and copy your  - preferrably **renamed** - Java class(es) into it :wink:.
+  - ​Then please immediately simply **re-author** :grinning: the Javadoc `@author` tag in the class docs of each **copied and adapted** class from `@author Darren Kelly (Webel IT Australia)` to: `@author Somebody Else`
 
 Then the code is yours to do whatever you like with :yum:. I prefer this over using "originally authored by" or "adapted from" - polite as it seems - as that still does not make it clear who authored what.
 
@@ -120,12 +118,12 @@ That's deliberately all it **does**. However, it **offers** some other useful fe
 
 ### How do I run the mini test web app (as is, out of the box) ?
 
-1. You need  [NetBeans IDE](https://netbeans.org/) (currently version 8.2), which includes the Glassfish-4.1.1 server. 
+1. You need  [NetBeans IDE](https://netbeans.org/) (currently version 8.2 as of Apr 2017), which includes the Glassfish-4.1.1 server. 
 2. You need to ensure that the Glassfish-4.1.1 server is assigned as a server in your NetBeans configuration. If it is not already, please refer to sub-section **2.1.4.2 To Add GlassFish Server as a Server Using NetBeans IDE** within the [2.1 Required Software](https://docs.oracle.com/javaee/7/tutorial/usingexamples001.htm#GEXAJ) section in the The Java EE Tutorial 7.
-   - Alternatively, you may install and use [Payara](http://www.payara.fish) (currently Payara41, v171), but if you do please be aware that somebody else running your test may then not have the identical server setup :disappointed:!
+   - BTW: If you have installed and use [Payara](http://www.payara.fish) (currently Payara41, v171), do please be aware that somebody else running your test may then not have the identical server setup :disappointed:! It's unlikely that the choice of server (as opposed to the running Mojarra JSF implementation version) will have a valid impact on a PrimeFaces test, so it's best to set Glassfish-4.1.1 as the server for your test project, even if you usually prefer Payara. See also below about installing and using alternative Mojarra versions or other JSF implementation versions just for your test project.
 3. From the [GitHub project page](https://github.com/webelcomau/Webel_PrimeFaces_test_template_NetBeans_Ant) perform a ZIP-Archive download by clicking on the **Clone or download** button once then choose **Download ZIP** (or just use [this master archive download link](https://github.com/webelcomau/Webel_PrimeFaces_test_template_NetBeans_Ant/archive/master.zip)):
-   - Please **DO NOT use the full Git clone option** ! It's better to "re-Git" an archive download locally (see below), if you think your own test case development is complex enough to need Git.
-   - ​Experts :sunglasses: may nevertheless insist on [forking](https://help.github.com/articles/fork-a-repo/) **then adapting** this project. If you do, please follow the special instructions concerning re-authoring at the top of this README, and the instructions below about renaming the test page titles :angel:. **Pull requests from forks will however NOT be accepted :-1:.**
+   - Please **DO NOT use the full Git clone option** ! It's better to "re-Git" an archive download locally if you think your own test case development is complex enough to need Git, see below for detailed instructions.
+   - ​Experts :sunglasses: may nevertheless insist on [forking](https://help.github.com/articles/fork-a-repo/) **then adapting** this project. If you do, please follow the special instructions concerning re-authoring :innocent:at the top of this README, and the instructions below about renaming the test page titles :angel:. **Pull requests from forks will however NOT be accepted :-1:.**
 4. Unzip the downloaded `Webel_PrimeFaces_test_template_NetBeans_Ant-master.zip` somewhere:
    - It will unzip as a folder `Webel_PrimeFaces_test_template_NetBeans_Ant-master`.
 5. Open that project folder in NetBeans IDE using **File > Open Project ...**
@@ -164,19 +162,19 @@ Please then **invest** some time to read the instructions in the **initially-col
    - From `Webel_PrimeFaces_test_template`
    - To `[YourCompany]_PrimeFaces_test_[testname]`
      - If you are preparing a test for a specific issue support ticket consider using the issue number in the `[testname]` part !
-2. You can do this in the main NetBeans IDE *Projects* window by right-clicking on the project and choosing **Rename...**
-   {0}. Please make sure you tick the **[✔] Also Rename Project Folder** option !
-3. In the top level `/web/index.xhtml`:
-   - At the very top find the `<ui:param name="title" value=" …"/>` and give it a meaningful new title.
+   - You can do this in the main NetBeans IDE *Projects* window by right-clicking on the project and choosing **Rename...**
+      - Please make sure you tick the **[✔] Also Rename Project Folder** option !
+2. In the top level `/web/index.xhtml`:
+   - At the very top find the `<ui:param name="title" value=" …"/>` and give it a meaningful new page title, which should indicate what one or more comparitive tests concern:
      - `<ui:param name="title" value="PrimeFaces: test web app: [PLEASE RENAME]"/>`
-   - **DO NOT comment out or delete the following line**, it should be at the top of every JSF page or JSF template, so that the date/time diagnostics and library versions appear in the page header every time a page is served:
+   - **DO NOT comment out or delete the following line**, it should be at the top of the `<h:body>` of every JSF page or JSF template, so that the date/time diagnostics and library versions appear in the page header every time a page is served:
      - `<ui:include src="/common.xhtml"/>`
-   - Comment out (or simply delete :scissors:) every `<ui:include ... />` for help panels and help boxes:
+   - ​Comment out or simply delete :scissors: every `<ui:include ... />` for help panels and help boxes:
      - You may then also completely delete the entire `/web/help` folder if you wish :relieved:.
    - Comment out the `<ui:include ... />` for the default test links (it's best to keep the referenced file in case you want to examine the examples again later, unless you've done this all before):
      - `<!-- <ui:include src="/include/default_test_links.xhtml"/> -->`
-4. Then **Clean and Build** and **Run** your renamed test web app **before** making any other JSF/XHTML code or Java class code modifications:
-   {0}. You should see a home page with a diagnostic header, a title describing the test you will create, a `p:panel` that you will use to describe your test in more detail, and a fieldset with a link to a STUB test page (and with none of those initially-included help panels and help boxes you bothered to read thoroughly before still showing) :smirk:.
+3. Then **Clean and Build** and **Run** your renamed test web app **before** making any other JSF/XHTML code or Java class code modifications:
+   {0}. You should see a home page with a diagnostic header, a title describing the test you will create, a `p:panel` that you will use to describe your test in more detail, and a fieldset with a link to a STUB test page (and with none of those initially-included help panels and help boxes you read thoroughly before  😏 still showing).
 
 #### You are now ready to start creating your own test web app variation with **new** test pages :grinning:
 
@@ -379,9 +377,9 @@ Many suspected PrimeFaces issues are in fact either **core** JSF issues (Mojarra
 
 ------
 
-#### Q: Did you ZIP-download (or [fork](https://help.github.com/articles/fork-a-repo/)) this project to **copy then adapt** ?
+#### Did you [ZIP-download](https://github.com/webelcomau/Webel_PrimeFaces_test_template_NetBeans_Ant/archive/master.zip) (or [fork](https://help.github.com/articles/fork-a-repo/)) this project to **copy then adapt** ?
 
-​Then please delete ​:scissors:​ and replace ​:pencil2:​ this long `README.md` file immediately **after reading it all** !
+​Then please delete :scissors: and replace :pencil2: this long `README.md` file immediately **after reading it all** !
 
 #### 
 
