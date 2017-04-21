@@ -21,8 +21,10 @@
         <h2>#{title}</h2>
 
         <!-- COMMENT OUT or delete once you've read this help served -->
+        <ui:include src="/help/help_remove_help.xhtml" />
         <ui:include src="/help/help_first_steps.xhtml" />
         <ui:include src="/help/help_rename_title.xhtml"/>
+        <ui:include src="/help/help_reauthoring.xhtml"/>
         <ui:include src="/help/warn_index_vs_tests.xhtml"/>
 
         <!-- DO EDIT this panel to describe your test -->
@@ -58,14 +60,13 @@
         <fieldset style="margin:1ex 0;">
             <legend>Links to test pages</legend>
 
-            <!-- PLEASE DO ADD YOUR NEW TEST CASE LINKS BELOW HERE -->
-            <p>
-                Your specific NEW test case(s) for support or forums:
+           <!-- PLEASE DO ADD YOUR NEW TEST CASE LINKS BELOW HERE -->            
+           <!-- Typically this home page will link to multiple, comparative test(s). -->
+            
                 <ol>
                     <li><h:link outcome="/test/0" value="[STUB ONLY]"/></li>
                     <li>[Your NEW test case page h:link goes here !]</li>
                 </ol>
-            </p>
 
         </fieldset>   
 

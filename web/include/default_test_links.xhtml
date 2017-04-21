@@ -11,48 +11,58 @@
         If you don't want it to appear in the index.xhtml just comment out or remove the ui:include.        
         -->
         <fieldset style="margin:2ex 0;width:65em;">
-            <legend>Links to default Webel JSF/PrimeFaces test pages</legend>
+            <legend>Links to default Webel JSF/PrimeFaces example test pages</legend>
 
-        <p>
-            Please feel welcome to <b>copy (only) then rename </b>, <span style="color:magenta;">re-author (via the XHTML page comment headers)</span>, and adapt the JSF/PrimeFaces test pages these link to:
-            <ol>
-                <li>
-                    <h:link 
-                        outcome="/examples/dataTable" 
-                        value="TEST: basic row-editable p:dataTable with a list of fake entities (and a p:commandButton to add new ones)"
-                        />
-                </li>
-                <li>
-                    <h:link 
-                        outcome="/examples/view?id=0" 
-                        value="TEST: f:viewParam: view a fake entity by id (=0) using a p:panelGrid (and an h:link to its edit page)"
-                        />
-                </li>
+            <p>
+                Please feel welcome to <b>copy, rename, <span style="color:magenta;">re-author (via the XHTML page comment headers)</span>, and adapt</b> the JSF/PrimeFaces test pages these link to:
+                <ol>
+                    <li>
+                        <h:link 
+                            outcome="/examples/dataTable" 
+                            value="TEST: basic row-editable p:dataTable with a list of fake entities (and a p:commandButton to add new ones)"
+                            />
+                    </li>
+                    <li>
+                        <h:link 
+                            outcome="/examples/view?id=0" 
+                            value="TEST: f:viewParam: view a fake entity by id (=0) using a p:panelGrid (and an h:link to its edit page)"
+                            />
+                    </li>
 
-                <li>
-                    <h:link 
-                        outcome="/examples/edit?id=0" 
-                        value="TEST: f:viewParam: edit a fake entity by id (=0) using a p:panelGrid with validated input and p:commandButton submit"/>
-                </li>
-            </ol>
-        </p>
-        
-        <util:warn style="width:50em;">
-            Please DO NOT directly edit 
-            <code>FakeEntity</code>, 
-            <code>FakeQuery</code>,
-            and <code>ViewBean</code> or you may break the default test pages !
-        </util:warn>
+                    <li>
+                        <h:link 
+                            outcome="/examples/edit?id=0" 
+                            value="TEST: f:viewParam: edit a fake entity by id (=0) using a p:panelGrid with validated input and p:commandButton submit"/>
+                    </li>
+                </ol>
+            </p>
 
-        <util:help style="width:50em;">
-            TIP: Please introduce new links with &lt;h:link&gt; to your NEW clearly described test case pages below !<br/>
-            If you have issue numbers for support tickets please include them in your link descriptions(s).
-        </util:help>  
 
-        <util:gotit_help/>
+            <util:warn style="width:55em;">
+                Please DO NOT directly edit the classes
+                <code>FakeEntity</code>, 
+                <code>FakeQuery</code>,
+                and <code>ViewBean</code> or you may break the example test pages !
+            </util:warn>
+
+            <util:help style="width:55em;">
+                TIP: If you are sure you won't need the example test pages again
+                simply delete the entire <code>/web/examples/</code> folder,<br/>
+                but please don't delete the Java classes
+                <code>FakeEntity</code>, 
+                <code>FakeQuery</code>,
+                and <code>ViewBean</code>, you may still need them.
+            </util:help>
+
+            <util:help style="width:55em;">
+                TIP: Please introduce new links with <code>&lt;h:link&gt;</code> to your NEW clearly described test case pages in the dedicated fieldset below !<br/>
+                If you have issue numbers for related support tickets please include them in your link descriptions(s).
+            </util:help>  
+
+            <util:gotit_help/>
 
         </fieldset>   
-        
+
     </ui:composition>
 </html>
 

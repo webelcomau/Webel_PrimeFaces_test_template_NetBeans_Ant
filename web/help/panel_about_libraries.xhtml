@@ -37,13 +37,22 @@
                 (Glassfish or Payara). To run against a specific Mojarra (or other JSF implementation) version:
                 <ul>
                     <li>
-                        Download a Mojarra implementation JAR <a href="https://maven.java.net/content/repositories/releases/org/glassfish/javax.faces/" target="_blank">from the Glassfish Maven repository</a> (you don't need Maven).
+                        There are some Mojarra versions already under the <code>./lib</code> folder 
+                        for you to choose from, or, if you need to test against another version:
+                        <ul>
+                            <li>
+                                Download a Mojarra implementation JAR 
+                                <a href="https://maven.java.net/content/repositories/releases/org/glassfish/javax.faces/" target="_blank">from the Glassfish Maven repository</a> 
+                                (you don't need Maven) and place the clearly named and versioned 
+                                <code>javax.faces-[version].jar</code>
+                                in the <code>./lib</code> folder of this project (do not over-write your 
+                                server's version, as it may impact on other JSF web applications, and it's tedious).
+                            </li>
+                        </ul>                        
                     </li>
                     <li>
-                        Place a clearly named and versioned <code>javax.faces-[version].jar</code> in the <code>./lib</code> folder of this project (do not over-write your server's version, as it may impact on other JSF web applications, and it's tedious).
-                    </li>
-                    <li>
-                        Assign it from the NetBeans IDE <em>Projects</em> window from the <b>Libraries</b> node for this project
+                        Assign it from the NetBeans IDE <em>Projects</em> window from the <b>Libraries</b> 
+                        node for your project
                         by right clicking and using just <b>Add JAR</b> (not as a full NetBeans Library)
                         and <b>use the relative path</b> option.
                     </li>
@@ -51,12 +60,12 @@
                         <span class="nb">Then uncomment BOTH LINES indicated in the <code>glassfish-web.xml</code> to <b><code>useBundledJsf</code></b>.</span>
                     </li>   
                     <li>
-                        Clean and build then run; the header will show you whether it caught the new version.
+                        Clean and Build then Run; the <code>common</code> header will show you whether it caught the new version.
                     </li>   
                 </ul>
             </p>
             <p>
-                To run a specific Primefaces version:
+                To run a specific PrimeFaces version:
                 <ul>
                     <li>
                         You can directly download 
@@ -67,17 +76,17 @@
                         Place a clearly named and versioned <code>primefaces-[version].jar</code> in the <code>./lib</code> folder of this project.
                     </li>
                     <li>
-                        In the <em>Projects</em> window under the <b>Libraries</b> node for this project 
+                        In the <em>Projects</em> window under the <b>Libraries</b> node for your project 
                         you might have to remove any existing PrimeFaces jar library assignment.
                         (It won't delete the actual JAR from the <code>./lib</code>, it just un-assigns it.)
                     </li>
                     <li>                        
                         Assign the new one from the <em>Projects</em> window from the <b>Libraries</b> node 
-                        for this project by right clicking and using just <b>Add JAR</b> 
+                        for your project by right clicking and using just <b>Add JAR</b> 
                         (not as a full NetBeans Library) and <b>use the relative path</b> option.
                     </li>
                     <li>
-                        Clean and build then run; the <code>commmon</code> header will show you whether it caught the new version.
+                        Clean and Build then Run; the <code>common</code> header will show you whether it caught the new version.
                     </li>   
                 </ul>
             </p>                

@@ -150,7 +150,13 @@ Please then **invest** some time to read the instructions in the **initially-col
 
   - When you create your own test cases you will not be using those exact test links or those exact test pages, but you may **copy, re-author, then adapt** them and create an `<h:link>` for each NEW test.
 
-    ​
+
+
+#### Q: It's meant to be a simple test web app. Why doesn't it look simple (yet) ?
+
+​*Your final **adapted project** home page will only show the diagnostic header, a page title, an "About" panel, and a fieldset with links to one or more test case pages. It will take you only a minute or so (literally) to strip out  :scissors: the help panels and example test case links if you follow the instructions below :smiley:.*
+
+
 
 ### How do I adapt the project for my own tests ?
 
@@ -158,7 +164,7 @@ Please then **invest** some time to read the instructions in the **initially-col
 
 #### Please first immediately perform these steps :cop:
 
-1. In NetBeans IDE rename the project:
+1. In NetBeans IDE **rename the project**:
    - From `Webel_PrimeFaces_test_template`
    - To `[YourCompany]_PrimeFaces_test_[testname]`
      - If you are preparing a test for a specific issue support ticket consider using the issue number in the `[testname]` part !
@@ -169,6 +175,7 @@ Please then **invest** some time to read the instructions in the **initially-col
      - `<ui:param name="title" value="PrimeFaces: test web app: [PLEASE RENAME]"/>`
    - **DO NOT comment out or delete the following line**, it should be at the top of the `<h:body>` of every JSF page or JSF template, so that the date/time diagnostics and library versions appear in the page header every time a page is served:
      - `<ui:include src="/common.xhtml"/>`
+     - It can't yet interrogate live the NetBeans IDE version or the Glassfish server version, so you may wish to edit it directly to change the statements about those to match your test setup.
    - ​Comment out or simply delete :scissors: every `<ui:include ... />` for help panels and help boxes:
      - You may then also completely delete the entire `/web/help` folder if you wish :relieved:.
    - Comment out the `<ui:include ... />` for the default test links (it's best to keep the referenced file in case you want to examine the examples again later, unless you've done this all before):
