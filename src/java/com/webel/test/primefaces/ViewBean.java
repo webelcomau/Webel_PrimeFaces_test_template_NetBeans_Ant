@@ -25,26 +25,34 @@ public class ViewBean implements Serializable {
 
     private static final Logger LOGGER = Logger.getLogger(ViewBean.class.getName());
 
-    private static void echo(String method, String name, Object value) {
+    private static void log_echo(String method, String name, Object value) {
         LOGGER.log(Level.INFO, "[{0}] {1}({2})", new Object[]{method, name, value});
     }
 
-    private static void echo(String name, Object value) {
+    private static void log_echo(String name, Object value) {
         LOGGER.log(Level.INFO, "{0}({1})", new Object[]{name, value});
     }
 
-    private static void echo(String s) {
-        LOGGER.info(s);
+    private static void log_info(String message) {
+        LOGGER.info(message);
     }
 
-    private static void warn(String s) {
-        LOGGER.warning(s);
+    private static void log_warn(String message) {
+        LOGGER.warning(message);
     }
 
+    private static void log_error(String message) {
+        LOGGER.log(Level.SEVERE, message);
+    }
+
+    private static void log_error(Exception ex) {
+        log_error(ex.getMessage());
+    }
+    
     public ViewBean() {
     }
 
-    private FakeQuery query = new FakeQuery();
+    private FakeQuery query = new FakeQuery(true);
 
     private List<FakeEntity> entities;
 
@@ -73,7 +81,7 @@ public class ViewBean implements Serializable {
      * @return A fresh list of fake entities.
      */
     private List<FakeEntity> fetchEntities() {
-        echo("fetchEntities");
+        log_info("fetchEntities");
         return query.getEntities();
     }
 
@@ -86,7 +94,7 @@ public class ViewBean implements Serializable {
      */
     public void reset() {
         entities = null;
-        echo("reset");
+        log_info("reset");
     }
 
     /**
@@ -104,20 +112,22 @@ public class ViewBean implements Serializable {
             String msg = $i + ": Can't update null selection";
             FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_WARN, msg, msg);
             FacesContext.getCurrentInstance().addMessage(null, facesMsg);
-            warn(msg);
+            log_warn(msg);
             return null;
         } else {
             query.merge(selected);
             String msg = $i + ": merged: entity: " + selected;
             FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_INFO, msg, msg);
             FacesContext.getCurrentInstance().addMessage(null, facesMsg);
-            echo(msg);
+            log_info(msg);
             return "/examples/view?faces-redirect=true&id=" + selected.getId();
         }
     }
 
     /**
      * Basic row edit handler for a p:dataTable of {@link FakeEntity} items.
+     * 
+     * Performs a merge via the the fake query (iff the event has a valid entiy object).
      *
      * @param event
      */
@@ -127,14 +137,14 @@ public class ViewBean implements Serializable {
             String msg = $i + ": SKIPPING: no entity object found from row edit event";
             FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_WARN, msg, msg);
             FacesContext.getCurrentInstance().addMessage(null, facesMsg);
-            warn(msg);
+            log_warn(msg);
         } else {
             FakeEntity e = (FakeEntity) event.getObject();
             query.merge(e);
             String msg = $i + ": merged: entity: " + e;
             FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_INFO, msg, msg);
             FacesContext.getCurrentInstance().addMessage(null, facesMsg);
-            echo(msg);
+            log_info(msg);
         }
     }
 
@@ -192,7 +202,7 @@ public class ViewBean implements Serializable {
         e.setStringValue(newString);
         e.setIntegerValue(newInteger);
         query.persist(e);
-        echo($i, "entity", e);
+        log_echo($i, "entity", e);
         String msg = "Added new entity: " + e;
         FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_INFO, msg, msg);
         FacesContext.getCurrentInstance().addMessage(null, facesMsg);
@@ -208,16 +218,16 @@ public class ViewBean implements Serializable {
      */
     public void setId(Long id) {
         String $i = "setId";
-        echo($i, "id", id);
+        log_echo($i, "id", id);
         if (id == null) {
             throw new IllegalArgumentException($i + ": null id !");
         }
         selected = query.find(id);
         if (selected != null) {
-            echo($i, "selected entity", selected);
+            log_echo($i, "selected entity", selected);
             this.id = id;
         } else {
-            warn("Could not find entity with id:" + id);
+            log_warn("Could not find entity with id:" + id);
         }
     }
 
@@ -237,12 +247,12 @@ public class ViewBean implements Serializable {
     }
 
 //    public void setSelected(FakeEntity selected) {
-//        echo("setSelected: "+selected);
+//        log_echo("setSelected: "+selected);
 //        this.selected = selected;
 //    }
     
     public void saveSelected() {
-        echo("saveSelected", "selected", selected);
+        log_echo("saveSelected", "selected", selected);
         query.merge(selected);
     }
 

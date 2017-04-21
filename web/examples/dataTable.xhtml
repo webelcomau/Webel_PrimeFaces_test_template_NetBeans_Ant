@@ -72,6 +72,13 @@
                     </f:facet>
                     <h:outputText value="#{e.detached}"/>
                 </p:column>
+
+                <p:column 
+                    sortBy="#{e.class.simpleName}"
+                    headerText="Class"
+                    >
+                    <h:outputText value="#{e.class.simpleName}"/>
+                </p:column>
                 
                 <p:column 
                     sortBy="#{e.id}"

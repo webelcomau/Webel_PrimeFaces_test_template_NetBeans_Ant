@@ -39,6 +39,10 @@
 
         <ui:fragment rendered="#{not empty viewBean.selected}">
             <p:panelGrid columns="2">
+                
+                <p:outputLabel value="Class:"/>
+                <h:outputText value="#{viewBean.selected.class.simpleName}"/>
+                
                 <p:outputLabel value="ID:"/>
                 <h:outputText value="#{viewBean.selected.id}"/>
 
