@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 /**
  * Extends a fake entity with an extra field.
  * 
- * Illustrates simply deep-cloning copy constructor recipe.
+ * Illustrates simple deep-cloning copy constructor recipe.
  * 
  * @author Originally: Darren Kelly (Webel IT Australia)
  */

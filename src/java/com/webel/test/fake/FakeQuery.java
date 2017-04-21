@@ -10,9 +10,25 @@ import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 
 /**
- * Simulates basic queries and CRUD operations with a {@link FakeEntity}.
- *
+ * Simulates basic queries and CRUD operations on {@link FakeEntity} items with no actual database.
+ * <p>
  * All read queries return deep clones to partially simulate JPA entity detachment.
+ * <p>
+ * You can use this fake query strategy to sensibly populate
+ * and test most JSF components and to support many JSF user
+ * interaction cases. Just create one directly in your JSF
+ * backing bean and use it as if you had injected an EJB.
+ * <p>
+ * If it really does not meet your needs
+ * consider using actual JPA and an <a href="https://db.apache.org/derby/papers/DerbyTut/embedded_intro.html">
+ * Embedded Derby DB</a> database together with EJBs and/or CDI.
+ * <p>
+ * But remember, the more moving parts you have, and the more your
+ * test app depends on a Java EE container, the more likely
+ * it is that a support team will not be able to reproduce your
+ * setup exactly when you submit a test case to them.
+ * <p>
+ * Are you testing Java EE or JSF ?
  *
  * @author Originally: Darren Kelly (Webel IT Australia)
  */
@@ -22,18 +38,20 @@ public class FakeQuery implements Serializable {
 
     /**
      * Constructs without an fake entity initialisation.
-     * 
+     * <p>
      */
-    public FakeQuery() {        
+    public FakeQuery() {
     }
-    
+
     /**
      * Constructs with optional fake ntity initialisation.
-     * 
+     *
      * @param init Whether to also invoke {@link  #initEntities()}.
      */
     public FakeQuery(boolean init) {
-        if (init) initEntities();
+        if (init) {
+            initEntities();
+        }
     }
 
     static private Map<Long, FakeEntity> entities = new HashMap<>();
@@ -60,27 +78,35 @@ public class FakeQuery implements Serializable {
     static private Long id = 0L;
 
     /**
-     * Simulates persisting the given fake entity to database (actually just stores in a map).
-     *
+     * Simulates persisting the given fake entity to database (actually just stores it in a map).
+     * <p>
      * Assigns a new id (and over-writes any existing one).
-     *
-     * The fake entity will be marked as NOT "detached".
+     * <p>
+     * The given fake entity will be marked as NOT "detached".
+     * <p>
+     * If the given fake entity has a non-null id and the map already 
+     * contains a fake entity with the same id, it will not add the 
+     * entity (just logs a warning).
      *
      * @param fe A fake entity to "persist" (to the underlying map).
      */
     public void persist(FakeEntity fe) {
-        fe.setId(id++);
-        fe.setDetached(false);
-        entities.put(fe.getId(), fe);
+        if (fe.getId() != null && entities.containsKey(fe.getId())) {
+            logger.warning("SKIPPING: have existing entity with same key:" + fe.getId());
+        } else {
+            fe.setId(id++);
+            fe.setDetached(false);
+            entities.put(fe.getId(), fe);
+        }
     }
 
     /**
      * Fake merge, adds a deep clone to an underlying map OR
      * overwrites any existing entity with a matching key.
-     *
+     * <p>
      * Throws an exception if the given entity is null
      * or if there is no existing map key matching its id.
-     *
+     * <p>
      * On merge the deep clone of the fake entity will be marked as NOT 'detached';
      * the given fake entity will remain in whatever 'detached' state it was when passed in.
      *
@@ -107,9 +133,9 @@ public class FakeQuery implements Serializable {
 
     /**
      * Finds a fake entity in the underlying map, returning a deep clone if found.
-     *
+     * <p>
      * Logs a warning if no match is found (and returns null).
-     *
+     * <p>
      * If it finds a match, the returned clone will be set 'detached'.
      *
      * @param id The id of the fake entity to find.
@@ -132,20 +158,22 @@ public class FakeQuery implements Serializable {
             return null;
         }
     }
-    
+
     /**
-     * Initialises some test fake entities; adapt as required for tests.
-     * 
+     * Initialises some test fake entities; adapt (or override) as required for tests.
+     * <p>
      * Can be invoked explicitly via {@link #FakeQuery(boolean)}
      * or using @PostConstruct if using CDI injection.
-     * 
+     * <p>
      * Visit also:
-     * 
-     * - <a href="https://docs.oracle.com/javaee/7/tutorial/cdi-basic014.htm">Java EE 7 tutorial: Using the @PostConstruct and @PreDestroy Annotations with CDI Managed Bean Classes</a>
-     * 
-     * - <a href="http://stackoverflow.com/questions/3406555/why-use-postconstruct">Why use @PostConstruct?
-</a>
-     * 
+     * <ul>
+     * <li>
+     * <a href="https://docs.oracle.com/javaee/7/tutorial/cdi-basic014.htm">Java EE 7 tutorial: Using the @PostConstruct and @PreDestroy Annotations with CDI Managed Bean
+     * Classes</a></li>
+     * <li>
+     * <a href="http://stackoverflow.com/questions/3406555/why-use-postconstruct">Why use @PostConstruct?
+     * </a></li>
+     * </ul>
      */
     @PostConstruct
     protected void initEntities() {
@@ -163,14 +191,14 @@ public class FakeQuery implements Serializable {
             e2.setStringValue("stringValue.2");
             e2.setIntegerValue(2);
             persist(e2);
-            
+
             Element e3 = new Element();
             e3.setName("e3");
             e3.setStringValue("stringValue.3");
             e3.setIntegerValue(3);
             e3.setFloatValue(3.3f);
-            persist(e3);            
+            persist(e3);
         }
     }
-    
+
 }

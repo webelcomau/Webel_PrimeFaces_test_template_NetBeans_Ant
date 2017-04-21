@@ -14,9 +14,9 @@ import org.primefaces.event.RowEditEvent;
 
 /**
  * A CDI-compliant ViewScoped JSF backing bean for interacting with {@link FakeEntity} test items.
- * 
+ * <p>
  * Includes also some convenient formatted logging methods.
- * 
+ *
  * @author Originally: Darren Kelly (Webel IT Australia).
  */
 @Named
@@ -48,7 +48,7 @@ public class ViewBean implements Serializable {
     private static void log_error(Exception ex) {
         log_error(ex.getMessage());
     }
-    
+
     public ViewBean() {
     }
 
@@ -58,14 +58,14 @@ public class ViewBean implements Serializable {
 
     /**
      * Gets entity list lazily !
-     * 
+     * <p>
      * Only fetched via (pretend) query when entities list
      * has been {@link #reset()} to null.
-     * 
-     * (This is a flexible alternative to the 
+     * <p>
+     * (This is a flexible alternative to the
      * popular @PostConstruct initialisation approach.)
-     * 
-     * @return 
+     *
+     * @return
      */
     public List<FakeEntity> getEntities() {
         if (entities == null) {
@@ -75,9 +75,9 @@ public class ViewBean implements Serializable {
     }
 
     /**
-     * Fetches a fresh list of fake entities from the (pretend) 
+     * Fetches a fresh list of fake entities from the (pretend)
      * database using a (pretend) query.
-     * 
+     *
      * @return A fresh list of fake entities.
      */
     private List<FakeEntity> fetchEntities() {
@@ -86,10 +86,10 @@ public class ViewBean implements Serializable {
     }
 
     /**
-     * Resets entities list to null so {@link #fetchEntities())
+     * Resets entities list to null so {@link #fetchEntities()}
      * forced on next {@link #getEntities()}.
-     * 
-     * Useful as a listener for an f:event and for some 
+     * <p>
+     * Useful as a listener for an f:event and for some
      * table manipulations such as when adding/removing rows.
      */
     public void reset() {
@@ -99,9 +99,9 @@ public class ViewBean implements Serializable {
 
     /**
      * Simulates a database merge of the currently {@link #selected} entity.
-     *
+     * <p>
      * Issues faces message diagnostics.
-     *
+     * <p>
      * If successful, redirects to the standard view page of the entity.
      *
      * @return Redirection outcome for an entity view page by id, or null if fails.
@@ -126,7 +126,7 @@ public class ViewBean implements Serializable {
 
     /**
      * Basic row edit handler for a p:dataTable of {@link FakeEntity} items.
-     * 
+     * <p>
      * Performs a merge via the the fake query (iff the event has a valid entiy object).
      *
      * @param event
@@ -189,7 +189,7 @@ public class ViewBean implements Serializable {
 
     /**
      * Action for adding a new fake entity with simulated persistence.
-     *
+     * <p>
      * Assumes some pre-validation of required fields.
      *
      * @return
@@ -239,7 +239,7 @@ public class ViewBean implements Serializable {
 
     /**
      * The entity "selected" by id using an f:viewParam and {@link #setId(java.lang.Long)}.
-     * 
+     *
      * @return May be null if there is no valid selection yet.
      */
     public FakeEntity getSelected() {
@@ -250,7 +250,6 @@ public class ViewBean implements Serializable {
 //        log_echo("setSelected: "+selected);
 //        this.selected = selected;
 //    }
-    
     public void saveSelected() {
         log_echo("saveSelected", "selected", selected);
         query.merge(selected);
