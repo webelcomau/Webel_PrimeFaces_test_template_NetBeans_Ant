@@ -209,7 +209,7 @@ Please then **invest** some time to read the instructions in the **initially-col
 
 This particular test web app deliberately does not use Maven. It uses the most basic Ant-based NetBeans web app project type designed to be used completely offline, with the simplest possible folder structure, and without any Maven setup. (Maven is indeed very cool, and a Maven-based version might also be offered later too.)  See below for instructions on how to easily change JSF Mojarra and PrimeFaces versions.
 
-### How to configure alternative Mojarra (JSF implementation) and PrimeFaces JAR libraries for comparitive tests
+### How to configure alternative Mojarra (JSF implementation) and PrimeFaces JAR libraries for comparative tests
 
 Often to investigate an issue one needs to experiment with different library versions and compare test runs.  This is quite easily done with this mini NetBeans web app. By default this web app will use the Mojarra bundled with your web app server (Glassfish as bundled with NetBeans, or Payara if you installed it extra), and a recent PrimeFaces community edittion version is included as a JAR under the `./lib` folder.
 
