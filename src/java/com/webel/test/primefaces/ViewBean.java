@@ -250,9 +250,5 @@ public class ViewBean implements Serializable {
 //        log_echo("setSelected: "+selected);
 //        this.selected = selected;
 //    }
-    public void saveSelected() {
-        log_echo("saveSelected", "selected", selected);
-        query.merge(selected);
-    }
 
 }
