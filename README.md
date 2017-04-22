@@ -268,7 +268,7 @@ You may of course introduce actual @EJBs. However, using actual database interac
 
 You will probably be able to prepare most JSF and PrimeFaces tests just using the simple `FakeQuery` and `FakeEntity` system offered here (although they can't imitate the full JPA query detach/merge process).
 
-If this `FakeQuery` recipe really does not meet your needs consider using actual JPA and an [Embedded Derby DB](https://db.apache.org/derby/papers/DerbyTut/embedded_intro.html) database together with EJBs and/or CDI. But remember, the more moving parts you have, and the more your test app depends on a Java EE container, the more likely it is that a support team will not be able to reproduce you setup exactly when you submit a test case to them. Are you testing Java EE or JSF ?
+If this `FakeQuery` recipe really does not meet your needs consider using actual JPA and an [Embedded Derby DB](https://db.apache.org/derby/papers/DerbyTut/embedded_intro.html) database together with EJBs and/or CDI. But remember, the more moving parts you have, and the more your test app depends on a real database and/or a  Java EE container, the more likely it is that a support team will not be able to reproduce your setup exactly when you submit a test case to them. Are you testing Java EE or JSF ?
 
 
 #### More about lazy loading/fetching in entity getters vs @PostConstruct in JSF
