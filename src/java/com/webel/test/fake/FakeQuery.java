@@ -160,7 +160,7 @@ public class FakeQuery implements Serializable {
     }
 
     /**
-     * Initialises some test fake entities; adapt (or override) as required for tests.
+     * Initialises some test fake entities; copy and adapt or extend and override as required for tests.
      * <p>
      * Can be invoked explicitly via {@link #FakeQuery(boolean)}
      * or using @PostConstruct if using CDI injection.
