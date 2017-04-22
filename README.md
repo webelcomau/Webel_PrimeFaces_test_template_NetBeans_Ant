@@ -15,9 +15,9 @@ Because this is a template project - designed to be **spawned then adapted** - t
 
 ## Foreword
 
-This project is developed and maintained by Darren Kelly (a.k.a. "Dr Darren") of [Webel IT Australia](https://www.webel.com.au) and [GreenSoft Australia Pty Ltd](http://www.greensoftaustralia.com) for our own purposes for quickly developing one-off JavaServer Faces (JSF) test web apps that use the [PrimeFaces](https://www.primefaces.org) UI framework/toolkit for JSF, for submission to the PrimeFaces support team, the PrimeFaces community forum, and public forums such as Stackoverflow. 
+This project is developed and maintained by Darren Kelly (a.k.a. "Dr Darren") of [Webel IT Australia](https://www.webel.com.au) and GreenSoft Australia Pty Ltd for our own purposes for quickly developing one-off JavaServer Faces (JSF) test web apps that use the [PrimeFaces](https://www.primefaces.org) UI framework/toolkit for JSF, for submission to the PrimeFaces support team, the PrimeFaces community forum, and public forums such as Stackoverflow. 
 
-*It is offered to the JSF community (without any warranty or guarantee of fitness for any purpose) in the hope that it may also be of use to others for developing your own **adapted** mini test web app projects.*
+*It is offered to the PrimeFaces and JSF community (without any warranty or guarantee of fitness for any purpose) in the hope that it may also be of use to others for developing your own **adapted** mini test web app projects.*
 
 **This project does not offer GitHub collaboration invitations or accept pull requests from forks !** 
 
@@ -232,7 +232,9 @@ Often to investigate an issue one needs to experiment with different library ver
 
 **To run a specific Primefaces version:**
 
-- You can directly download [Community Edition JARs for PrimeFaces](https://www.primefaces.org/downloads/)  from the main PrimeFaces site (you may have to scroll down a bit) or latest ELITE and PRO versions if you are a subscribed customer.
+- A recent version of the PrimeFaces Community Edition JAR is already in the `./lib` folder and the project library settings are pre-configured to use it by default. It's easily changed to another version.
+
+- You can directly download [Community Edition JARs for PrimeFaces](https://www.primefaces.org/downloads/)  from the main PrimeFaces site (you may have to scroll down a bit) or latest ELITE and PRO versions if you are a subscribed customer, or from the [Maven Central PrimeFaces folder](http://repo1.maven.org/maven2/org/primefaces/primefaces/).
 
 - Place a clearly named and versioned `primefaces-[version].jar` in the `./lib` folder of your project.
 
@@ -248,11 +250,13 @@ Often to investigate an issue one needs to experiment with different library ver
 
 ### About the provided fake entities and fake queries test system (and why you may not need real EJBs or a real database)
 
-Behind the scenes this mini web app offers three main Java classes:
+Behind the scenes this mini web app offers these main Java classes:
 
-- `FakeEntity`: a POJO with some basic primitive fields one can get and set:
-  - It has a special field `detached` to mimic JPA detachment.
-- `FakeQuery`: simulates some classic JPA EntityManager CRUD interactions with `FakeEntity` items using a map of fake entities. It does not actually write to a database, and it is not an actual EJB (or even used as an injected CDI bean).
+- `FakeEntity`: a POJO with some basic primitive fields (properties) one can get and set:
+  - It has a special field `detached` to help mimic JPA detachment.
+  - It uses a deep-cloning copy constructor and `clone()` reimplementation to help mimic JPA detachment. Please read the Javadocs for `FakeEntity::clone()` for instructions.
+  - There is also an `Element` that shows how to extend `FakeEntity` with extra properties. If you introduce relationships, remember to perform recursive deep-cloning in your copy constructor.
+- `FakeQuery`: simulates some classic JPA EntityManager CRUD interactions with `FakeEntity` items using a map of fake entities. It does not actually write to a database, and it is not an actual EJB (or even used as an injected CDI bean). It includes optional initialisation with some fake entities.
 - `ViewBean`: a CDI-compliant `@ViewScoped` JSF backing bean. It offers the ability to interact with`FakeEntity` items "fetched" via `FakeQuery`, almost like a real EJB query:
   - Importantly, it performs lazy loading in `getEntities()` via `fetchEntities()`, on first access or after a `reset()`. See the example `/web/dataTable.xhtml` test page (and the explanation below).
   - It also offers a `setId(Long id)` for use with `f:viewParam` in the `view.xhtml` and `edit.xhtml` example test pages for individual `FakeEntity` items.
@@ -264,6 +268,7 @@ You may of course introduce actual @EJBs. However, using actual database interac
 
 You will probably be able to prepare most JSF and PrimeFaces tests just using the simple `FakeQuery` and `FakeEntity` system offered here (although they can't imitate the full JPA query detach/merge process).
 
+If this `FakeQuery` recipe really does not meet your needs consider using actual JPA and an [Embedded Derby DB](https://db.apache.org/derby/papers/DerbyTut/embedded_intro.html) database together with EJBs and/or CDI. But remember, the more moving parts you have, and the more your test app depends on a Java EE container, the more likely it is that a support team will not be able to reproduce you setup exactly when you submit a test case to them. Are you testing Java EE or JSF ?
 
 
 #### More about lazy loading/fetching in entity getters vs @PostConstruct in JSF
@@ -361,7 +366,7 @@ Many suspected PrimeFaces issues are in fact either **core** JSF issues (Mojarra
 - For suspected **PrimeFaces** issues:
 
   - Always inspect the examples at the [PrimeFaces Showcase](https://www.primefaces.org/showcase/) first !
-  - Make sure you've read the [PrimeFaces Documentation](https://www.primefaces.org/documentation/) first !
+  - Make sure you've read the [PrimeFaces Documentation](https://www.primefaces.org/documentation/) first, download [PDFs here](https://www.primefaces.org/docs/guide/) !
     - There is also a [PrimeFaces Cookbook - Second Edition](https://www.packtpub.com/application-development/primefaces-cookbook-second-edition) from 2015.
   - ​Check the [PrimeFaces forum](https://forum.primefaces.org/), where you are more likely to get more help from the volunteers :sleeping: if you can provide a nice test web app (like one **adapted** from this mini test web app template).
   - Even if you have a paid [PrimeFaces support subscription](https://www.primefaces.org/support/) you'll get faster help if you have a good test app demonstrating your problem.
