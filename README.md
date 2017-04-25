@@ -1,4 +1,10 @@
 ## Webel_PrimeFaces_test_template_NetBeans_Ant
+#### POSTPONED 
+
+​*Because one volunteer on the PrimeFaces forums and Community issue queues is refusing :rage: to use NetBeans IDE test web apps (which have been accepted by other people there many times in the past), I will at some stage prepare a version of this that can be **prepared** as a Maven-based NetBeans IDE project but **downloads** (filtered via .gitattributes) as a project archive bundle from GitHub as a `mvn jetty:run` compliant project.*
+
+------
+
 A template project for preparing mini [NetBeans IDE](https://netbeans.org/) Ant-based web apps for testing and demonstrating suspected issues with the [PrimeFaces](https://www.primefaces.org/) UI framework/toolkit for [JavaServer Faces (JSF)](http://www.oracle.com/technetwork/java/javaee/javaserverfaces-139869.html) and Java EE.
 
 ------
